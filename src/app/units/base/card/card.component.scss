@@ -1,0 +1,86 @@
+@import "src/theme/mixins";
+
+$bg_color: var(--color-primary);
+$control_bg: var(--color-bg);
+.card {
+  @include box-shadow();
+  @include card-borders();
+  display: inline-block;
+  max-width: 250px;
+  background: $bg_color;
+  //border-radius: 10px;
+  margin: 20px;
+  padding: 5px;
+  height: 450px;
+  //white-space: nowrap;
+  //overflow: hidden;
+  //text-overflow: ellipsis;
+  &__pic {
+    text-align: center;
+  }
+
+  &__title {
+    h3 {
+      margin: 5px 0;
+    }
+
+  }
+//TODO: сделать перенос текста
+  &__description {
+    height: 100px;
+    max-width: 250px;
+    //word-wrap: break-word;
+    //word-break: break-all;
+    //line-break: ;
+    //overflow-wrap: break-word;
+    //white-space: nowrap;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  &__buy-area{
+
+  }
+  &__buy-button{
+    @include buy-button();
+    margin: 20px 0 ;
+  }
+  &__price{
+    display: inline-block;
+    float: right;
+    margin: 20px 10px ;
+    font-size: 20px;
+  }
+}
+
+.control {
+  @include control-borders();
+  background: $control_bg;
+
+  //border-radius: 20px;
+  margin-top: 5px;
+  text-align: center;
+  display: flex;
+  background: $bg_color;
+
+  &__item {
+    @include control-borders();
+    flex-grow: 1;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 20px;
+    //color: $bg_color;
+    color: $control_bg;
+
+    &.active {
+      background: $control_bg;
+      color: black;
+    }
+
+    &:hover {
+      color: black;
+      cursor: pointer;
+      //border: 1px solid black;
+    }
+  }
+}

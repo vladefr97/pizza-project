@@ -57,8 +57,10 @@ border-bottom: 3px solid $bg_color;
   }
 
   &__mobile {
+
     //max-height: 100px;
     .menu__list {
+      display: none;
       margin: 0;
       height: 100vh;
       background: $primary;

@@ -5,14 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './units/project/header/header.component';
-import { NavComponent } from './units/nav/nav.component';
+import { NavComponent } from './units/project/nav/nav.component';
+import { CardComponent } from './units/base/card/card.component';
+import { OrderComponent } from './units/base/order/order.component';
+import { OrderBasketComponent } from './units/base/order-basket/order-basket.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    NavComponent
+    NavComponent,
+    CardComponent,
+    OrderComponent,
+    OrderBasketComponent
   ],
   imports: [
     BrowserModule,

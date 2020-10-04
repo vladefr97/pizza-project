@@ -1,0 +1,25 @@
+@mixin box-shadow() {
+  box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+}
+
+@mixin buy-button() {
+  background: var(--color-accent);
+  color: var(--color-primary);
+  padding: 10px 15px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+}
+
+@mixin card-borders(){
+  border-radius: 10px;
+  //TODO: сделать pointer
+  //&:hover{
+  //  cursor: pointer;
+  //}
+
+}
+
+@mixin control-borders(){
+  border-radius: 20px;
+}
