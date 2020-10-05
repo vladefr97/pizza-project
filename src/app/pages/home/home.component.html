@@ -1,15 +1,24 @@
 <app-nav></app-nav>
 <app-header></app-header>
-<div class="container">
-  <app-order-basket></app-order-basket>
-<!--  <button (click)="showPage()"></button>-->
-<!--  <router-outlet></router-outlet>-->
-  <app-card></app-card>
-<!--  <app-card></app-card>-->
-<!--  <app-card></app-card>-->
-<!--  <app-card></app-card>-->
-<!--  <app-card></app-card>-->
-  <!--    <app-card></app-card>-->
+<div class="wrapper">
+  <div class="container">
+
+    <!--  <button (click)="showPage()"></button>-->
+    <!--  <router-outlet></router-outlet>-->
+    <app-card></app-card>
+    <app-card></app-card>
+    <app-card></app-card>
+    <app-card></app-card>
+    <app-card></app-card>
+        <app-card></app-card>
+
+  </div>
+  <div class="sidebar__container">
+    <app-sidebar>
+      <app-order-basket></app-order-basket>
+    </app-sidebar>
+
+  </div>
 
 </div>
 

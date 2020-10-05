@@ -1,0 +1,39 @@
+@import "src/theme/mixins";
+$border_color: var(--color-border);
+$accent_light: var( --color-accent-transparent);
+.counter{
+  &__minus,&__value, &__plus{
+    display: inline-block;
+    margin: 5px;
+  }
+  &__minus, &__plus{
+    @include box-shadow();
+    display: inline-block;
+    background:$accent_light;
+    border-radius: 25px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    vertical-align: middle;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+  }
+}
+.order {
+  margin: 10px;
+  border-bottom: .5px solid $border_color;
+  &__picture, &__details, &__delete,&__controls,&__price {
+    display: inline-block;
+  }
+  &__controls{
+    //margin: 10px 5px;
+  }
+  &__price{
+    float: right;
+    margin: 10px 5px;
+  }
+
+}

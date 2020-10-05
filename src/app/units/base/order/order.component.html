@@ -1,1 +1,27 @@
-<p>order works!</p>
+<div class="basket__order order">
+  <div class="order__body">
+    <div class="order__picture"> <picture>
+      <img src="./assets/images/pizza_1.jpeg" alt="Пицца с грибами" width="40px" height="30px">
+    </picture></div>
+    <div class="order__details">
+      <div class="order__name">{{name}}</div>
+      <div class="order__params">{{type}}, {{diameter}} см</div>
+    </div>
+    <div class="order__delete">x</div>
+  </div>
+
+  <div class="order__controls">
+    <div class="order__counter counter">
+      <div class="counter__minus" (click)="decreaseCount()">-</div>
+      <div class="counter__value">{{count}}</div>
+      <div class="counter__plus" (click)="increaseCount()">+</div>
+    </div>
+
+  </div>
+  <!--      TODO: повторяющийся элемент-->
+  <div class="order__price price">
+    <span class="price__value">690</span>
+    <span class="price__unit">Р</span>
+  </div>
+
+</div>
