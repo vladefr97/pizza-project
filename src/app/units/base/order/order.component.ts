@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-order',
@@ -6,10 +6,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order.component.scss']
 })
 export class OrderComponent implements OnInit {
+  private name: string;
+  private type: string;
+  private diameter: number;
+  private price: number;
+  private count: number;
 
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  private increaseCount() {
+    this.count++;
+  }
+  private decreaseCount() {
+    this.count--;
   }
 
 }
