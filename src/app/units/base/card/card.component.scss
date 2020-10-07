@@ -66,31 +66,31 @@ $control_bg: var(--color-bg);
     margin-top: 10px;
   }
 }
-
-.control {
-  @include control-borders();
-  background: $control_bg;
-  margin-top: 5px;
-  text-align: center;
-  display: flex;
-  background: $bg_color;
-
-  &__item {
-    @include control-borders();
-    flex-grow: 1;
-    padding: 10px;
-    display: inline-block;
-    border-radius: 20px;
-    color: $control_bg;
-
-    &.active {
-      background: $control_bg;
-      color: black;
-    }
-
-    &:hover {
-      color: black;
-      cursor: pointer;
-    }
-  }
-}
+//
+//.control {
+//  @include control-borders();
+//  background: $control_bg;
+//  margin-top: 5px;
+//  text-align: center;
+//  display: flex;
+//  background: $bg_color;
+//
+//  &__item {
+//    @include control-borders();
+//    flex-grow: 1;
+//    padding: 10px;
+//    display: inline-block;
+//    border-radius: 20px;
+//    color: $control_bg;
+//
+//    &.active {
+//      background: $control_bg;
+//      color: black;
+//    }
+//
+//    &:hover {
+//      color: black;
+//      cursor: pointer;
+//    }
+//  }
+//}

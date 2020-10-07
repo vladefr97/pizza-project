@@ -15,13 +15,12 @@
   </div>
   <div class="card__controls">
     <div class="card__control control type">
-      <div class="control__item active">Традиционное</div>
-      <div class="control__item">Тонкое</div>
+      <app-select [options]="['Традиционное','Тонкое']"></app-select>
+<!--      <div class="control__item active">Традиционное</div>-->
+<!--      <div class="control__item">Тонкое</div>-->
     </div>
     <div class="card__control control size">
-      <div class="control__item">20 см</div>
-      <div class="control__item active">30 см</div>
-      <div class="control__item">40 см</div>
+      <app-select [options]="['20 см','30 см','40 см']"></app-select>
     </div>
   </div>
   <div class="card__buy-area">

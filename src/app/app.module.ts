@@ -11,9 +11,11 @@ import {OrderComponent} from './units/base/order/order.component';
 import {OrderBasketComponent} from './units/base/order-basket/order-basket.component';
 import {SidebarComponent} from './units/project/sidebar/sidebar.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatIconModule} from '@angular/material';
+import {MatIconModule, MatInputModule} from '@angular/material';
+import { OrderPageComponent } from './pages/order-page/order-page.component';
+import { SelectComponent } from './units/base/ui-elements/select/select.component';
 
-const MaterialComponents = [MatIconModule];
+const MaterialComponents = [MatIconModule,MatInputModule];
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ const MaterialComponents = [MatIconModule];
     CardComponent,
     OrderComponent,
     OrderBasketComponent,
-    SidebarComponent
+    SidebarComponent,
+    OrderPageComponent,
+    SelectComponent
   ],
   imports: [
     BrowserModule,
