@@ -1,4 +1,4 @@
-@import "src/theme/mixins";
+@import "~src/theme/mixins";
 
 $bg_color: var(--color-primary);
 $control_bg: var(--color-bg);
@@ -6,40 +6,51 @@ $control_bg: var(--color-bg);
   @include box-shadow();
   @include card-borders();
   display: inline-block;
-  max-width: 250px;
   background: $bg_color;
-  //border-radius: 10px;
-  margin: 20px;
-  padding: 5px;
-  height: 450px;
-  //white-space: nowrap;
-  //overflow: hidden;
-  //text-overflow: ellipsis;
+  max-width: 300px;
+  margin: 10px;
+  padding: 15px;
+  @media (min-width: 1025px) {
+    max-width: 250px;
+    //padding: 5px;
+    height: 450px;
+    margin: 20px;
+  }
+
   &__pic {
     text-align: center;
+    img{
+      width: 100px;
+      height: 70px;
+      float: left;
+      @media (min-width: 1025px) {
+        height: 160px;
+        width: 200px;
+        float: none;
+      }
+    }
   }
 
   &__title {
     h3 {
       margin: 5px 0;
     }
-
   }
 //TODO: сделать перенос текста
   &__description {
-    height: 100px;
+    height: 70px;
     max-width: 250px;
     //word-wrap: break-word;
     //word-break: break-all;
-    //line-break: ;
+    ////line-break: ;
     //overflow-wrap: break-word;
     //white-space: nowrap;
 
     text-overflow: ellipsis;
     overflow: hidden;
-  }
-  &__buy-area{
-
+    @media (min-width: 1025px) {
+      height: 100px;
+    }
   }
   &__buy-button{
     @include buy-button();
@@ -51,13 +62,14 @@ $control_bg: var(--color-bg);
     margin: 20px 10px ;
     font-size: 20px;
   }
+  &__controls{
+    margin-top: 10px;
+  }
 }
 
 .control {
   @include control-borders();
   background: $control_bg;
-
-  //border-radius: 20px;
   margin-top: 5px;
   text-align: center;
   display: flex;
@@ -69,7 +81,6 @@ $control_bg: var(--color-bg);
     padding: 10px;
     display: inline-block;
     border-radius: 20px;
-    //color: $bg_color;
     color: $control_bg;
 
     &.active {
@@ -80,7 +91,6 @@ $control_bg: var(--color-bg);
     &:hover {
       color: black;
       cursor: pointer;
-      //border: 1px solid black;
     }
   }
 }

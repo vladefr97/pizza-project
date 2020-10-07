@@ -28,9 +28,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/material-icons/iconfont/material-icons.css"
             ],
-            "scripts": []
+            "scripts": ["./node_modules/hammerjs/hammer.min.js"]
           },
           "configurations": {
             "production": {
@@ -93,9 +94,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/material-icons/iconfont/material-icons.css"
             ],
-            "scripts": []
+            "scripts": ["./node_modules/hammerjs/hammer.min.js"]
           }
         },
         "lint": {
