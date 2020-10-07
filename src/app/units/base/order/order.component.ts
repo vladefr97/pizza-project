@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-order',
@@ -6,11 +6,11 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./order.component.scss']
 })
 export class OrderComponent implements OnInit {
-  private name: string;
-  private type: string;
-  private diameter: number;
-  private price: number;
-  private count: number;
+  @Input() name: string;
+  @Input() type: string;
+  @Input() diameter: number;
+  @Input() price: number;
+  private count = 1;
 
 
   constructor() {
@@ -22,8 +22,10 @@ export class OrderComponent implements OnInit {
   private increaseCount() {
     this.count++;
   }
+
   private decreaseCount() {
-    this.count--;
+    this.count = this.count <= 1 ? 1 : --this.count;
+
   }
 
 }

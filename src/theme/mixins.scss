@@ -13,11 +13,10 @@
 
 @mixin card-borders(){
   border-radius: 10px;
-  //TODO: сделать pointer
-  //&:hover{
-  //  cursor: pointer;
-  //}
+}
 
+@mixin top-card-borders(){
+  border-radius: 10px 10px 0 0 ;
 }
 
 @mixin control-borders(){
@@ -44,7 +43,7 @@
     background-image: none;
     background-repeat: no-repeat;
     width: 4px;
-    height: 0px
+    height: 0;
   }
 
   ::-webkit-scrollbar {

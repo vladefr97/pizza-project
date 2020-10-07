@@ -1,4 +1,4 @@
-@import "src/theme/mixins";
+@import "~src/theme/mixins";
 
 $bg_color: var(--color-primary);
 $control_bg: var(--color-bg);
@@ -8,13 +8,10 @@ $control_bg: var(--color-bg);
   display: inline-block;
   max-width: 250px;
   background: $bg_color;
-  //border-radius: 10px;
   margin: 20px;
   padding: 5px;
   height: 450px;
-  //white-space: nowrap;
-  //overflow: hidden;
-  //text-overflow: ellipsis;
+
   &__pic {
     text-align: center;
   }
@@ -37,9 +34,6 @@ $control_bg: var(--color-bg);
 
     text-overflow: ellipsis;
     overflow: hidden;
-  }
-  &__buy-area{
-
   }
   &__buy-button{
     @include buy-button();

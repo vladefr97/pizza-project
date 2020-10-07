@@ -1,31 +1,82 @@
-@import "src/theme/mixins";
+@import "~src/theme/mixins";
 
 $basket_main_color: var(--color-primary);
 $border_color: var(--color-border);
+$accent: var(--color-accent);
+$light_accent: var(--color-accent-light);
 .basket {
-  @include box-shadow();
-  @include card-borders();
-  @include scroll();
-  background: $basket_main_color;
-  max-width: 350px;
 
+  @include box-shadow();
+  @include scroll();
+  @include top-card-borders();
+  background: $basket_main_color;
   padding: 10px;
-  border-top: 2px solid red;
-  border-bottom:2px solid red;
+  border-top: 2px solid $accent;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  max-height: 20px;
+
+
+  @media (min-width: 1025px) {
+    text-align: left;
+    max-height: none;
+    @include card-borders();
+    border-bottom: 2px solid $accent;
+    max-width: 350px;
+  }
 
   &__header {
     margin-bottom: 10px;
-    border-bottom: .5px solid $border_color;
+    @media (min-width: 1025px) {
+      border-bottom: .5px solid $border_color;
+    }
   }
 
-  &__body{
-
+  &__body {
     max-height: 70vh;
-    overflow-y:auto ;
+    overflow-y: auto;
+    display: none;
+    @media (min-width: 1025px) {
+      display: block;
+      max-width: 350px;
+    }
   }
-  button.basket__order{
+
+  &__footer {
+    display: none;
+    @media (min-width: 1025px) {
+      display: block;
+    }
+  }
+
+  &__icon {
+    color: $light_accent;
+  }
+
+  &__count {
+    color: $light_accent;
+    font-size: 18px;
+    vertical-align: middle;
+    float: left;
+  }
+
+  &__clear {
+    float: right;
+    margin-right: 10px;
+    color: $light_accent;
+    cursor: pointer;
+  }
+
+  button.basket__order {
     @include buy-button();
   }
 
-
+  &:active {
+    background: $accent;
+    * {
+      color: $basket_main_color;
+    }
+  }
 }
+
