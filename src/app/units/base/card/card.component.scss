@@ -3,6 +3,7 @@
 $bg_color: var(--color-primary);
 $control_bg: var(--color-bg);
 .card {
+  //font-family: 'PT Sans', Serif, sans-serif !important;
   @include box-shadow();
   @include card-borders();
   display: inline-block;
