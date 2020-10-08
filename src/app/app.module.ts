@@ -14,6 +14,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatIconModule, MatInputModule} from '@angular/material';
 import { OrderPageComponent } from './pages/order-page/order-page.component';
 import { SelectComponent } from './units/base/ui-elements/select/select.component';
+import {AngularSvgIconModule} from 'angular-svg-icon';
+import {HttpClientModule} from "@angular/common/http";
 
 const MaterialComponents = [MatIconModule,MatInputModule];
 
@@ -28,13 +30,15 @@ const MaterialComponents = [MatIconModule,MatInputModule];
     OrderBasketComponent,
     SidebarComponent,
     OrderPageComponent,
-    SelectComponent
+    SelectComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialComponents
+    MaterialComponents,
+    HttpClientModule,
+    AngularSvgIconModule.forRoot()
   ],
   exports: [MaterialComponents],
   providers: [],
