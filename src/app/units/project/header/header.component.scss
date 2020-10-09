@@ -9,6 +9,7 @@ $border_color: var(--color-bg);
   height: 50px;
   border-bottom: 3px solid $bg_color;
   position: fixed;
+  overflow: hidden;
   @media (min-width: 1025px) {
     position: relative;
 
@@ -68,14 +69,55 @@ $border_color: var(--color-bg);
     }
   }
 
+  &__desktop{
+    display: none;
+    margin-top: -15px;
+    @media (min-width: 600px) {
+      display: inline-block;
+
+    }
+    *{display: inline-block}
+
+    .menu__list {
+      margin-top: 0;
+      max-height: 40px;
+      vertical-align: middle;
+    }
+
+    .menu__item {
+
+      padding: 12px 8px;
+      margin-right: 4px;
+      vertical-align: middle;
+      cursor: pointer;
+      color: $accent_light;
+
+      &:hover {
+        background: $primary;
+        color: $accent;
+      }
+    }
+    .menu__login {
+      //background: #ffffff;
+      //font-size: 30px;
+      padding: 8px 12px;
+      //color: $accent;
+      float: right;
+      margin-top: 4px;
+      //cursor: pointer;
+
+    }
+  }
   &__mobile {
     .menu__list {
+      //TODO: remove display:none in order to display mobile menu
       display: none;
       margin: 0;
       height: 100vh;
       background: $primary;
       position: fixed;
       top: 51px;
+      left: 0;
       width: 100%;
       list-style-type: none;
       padding: 0;
@@ -101,3 +143,17 @@ $border_color: var(--color-bg);
   }
 }
 
+.login{
+  cursor: pointer;
+  color: $accent_light;
+  .login__hover{display: none}
+  .login__normal{display: inline-block}
+  &:hover{
+    background-color: $accent_light;
+    color: white;
+    .login__hover{
+      display: inline-block}
+    .login__normal{display: none}
+  }
+
+}
