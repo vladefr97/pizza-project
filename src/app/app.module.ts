@@ -8,7 +8,7 @@ import {HeaderComponent} from './units/project/header/header.component';
 import {NavComponent} from './units/project/nav/nav.component';
 import {CardComponent} from './units/base/card/card.component';
 import {OrderComponent} from './units/base/order/order.component';
-import {OrderBasketComponent} from './units/base/order-basket/order-basket.component';
+import {OrderCartComponent} from './units/base/order-cart/order-cart.component';
 import {SidebarComponent} from './units/project/sidebar/sidebar.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatIconModule, MatInputModule} from '@angular/material';
@@ -27,7 +27,7 @@ const MaterialComponents = [MatIconModule,MatInputModule];
     NavComponent,
     CardComponent,
     OrderComponent,
-    OrderBasketComponent,
+    OrderCartComponent,
     SidebarComponent,
     OrderPageComponent,
     SelectComponent,

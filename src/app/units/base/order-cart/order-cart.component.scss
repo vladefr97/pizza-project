@@ -1,15 +1,25 @@
 @import "~src/theme/mixins";
 
-$basket_main_color: var(--color-primary);
+$cart_main_color: var(--color-primary);
 $border_color: var(--color-border);
 $accent: var(--color-accent);
 $light_accent: var(--color-accent-light);
-.basket {
+//.cart-container{
+//  position: absolute;
+//  top:0;
+//  right:50px;
+//  height: 100%;
+//}
+.cart {
 
   @include box-shadow();
   @include scroll();
   @include top-card-borders();
-  background: $basket_main_color;
+  color: var(--color-font-light);
+  //position: sticky;
+  //position: -webkit-sticky;
+  //top: 20px;
+  background: $cart_main_color;
   padding: 10px;
   border-top: 2px solid $accent;
   text-align: center;
@@ -17,13 +27,33 @@ $light_accent: var(--color-accent-light);
   margin: 0 auto;
   max-height: 20px;
 
+  &:active {
+    background: $accent;
+
+    * {
+      color: $cart_main_color;
+    }
+  }
 
   @media (min-width: 1025px) {
     text-align: left;
     max-height: none;
     @include card-borders();
     border-bottom: 2px solid $accent;
-    max-width: 350px;
+    max-width: 400px;
+    //&:active {
+    //  background: $cart_main_color;
+    //
+    //  * {
+    //    color: var(--color-font-light);;
+    //  }
+    //
+    //  &__icon, &__count, &__clear {
+    //
+    //    color: $light_accent;
+    //
+    //  }
+    //}
   }
 
   &__header {
@@ -68,15 +98,10 @@ $light_accent: var(--color-accent-light);
     cursor: pointer;
   }
 
-  button.basket__order {
+  button.cart__order {
     @include buy-button();
   }
 
-  &:active {
-    background: $accent;
-    * {
-      color: $basket_main_color;
-    }
-  }
+
 }
 
