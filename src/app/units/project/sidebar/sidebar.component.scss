@@ -9,9 +9,15 @@
     position: sticky;
     padding-top: 20px;
     top: 0;
-    margin-right: 200px;
-    margin-left: -350px;
+    margin-right: 100px;
+    margin-left: -100px;
     width: auto;
+
+  }
+  @media (min-width:1440px) {
+    margin-right: 200px;
+    margin-left: -300px;
+
 
   }
 }
