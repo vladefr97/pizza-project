@@ -1,4 +1,5 @@
 @import "~src/theme/mixins";
+
 $border_color: var(--color-border);
 $accent_light: var(--color-accent-transparent);
 .counter {
@@ -21,13 +22,35 @@ $accent_light: var(--color-accent-transparent);
     font-weight: bold;
     cursor: pointer;
     outline: none;
+    border: none;
+  }
+  &__value{
+    width: 20px;
+    text-align: center;
   }
 }
 
 .order {
-  margin: 10px;
   border-bottom: .5px solid $border_color;
-  position: relative;
+
+  &__body {
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas: "pic des des des des des des del";
+  }
+
+  &__picture {
+    grid-area: pic;
+  }
+
+  &__details {
+    grid-area: des;
+  }
+
+  &__delete {
+    grid-area: del;
+  }
 
   &__picture, &__details, &__delete, &__controls, &__price {
     display: inline-block;
