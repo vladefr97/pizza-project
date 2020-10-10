@@ -7,7 +7,7 @@ $control_bg: var(--color-bg);
   @include card-borders();
   display: inline-block;
   background: $bg_color;
- 
+
   margin: 10px;
   padding: 15px;
   @media (min-width: 1025px) {

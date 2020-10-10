@@ -24,6 +24,10 @@ $accent_light: var(--color-accent-transparent);
     outline: none;
     border: none;
   }
+  &__value{
+    width: 20px;
+    text-align: center;
+  }
 }
 
 .order {
