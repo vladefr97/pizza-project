@@ -16,6 +16,10 @@ import { OrderPageComponent } from './pages/order-page/order-page.component';
 import { SelectComponent } from './units/base/ui-elements/select/select.component';
 import {AngularSvgIconModule} from 'angular-svg-icon';
 import {HttpClientModule} from "@angular/common/http";
+import { TotalCostComponent } from './units/base/ui-elements/total-cost/total-cost.component';
+import { OrderFormComponent } from './units/project/forms/order-form/order-form.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import { DeliveryFormComponent } from './units/project/forms/delivery-form/delivery-form.component';
 
 const MaterialComponents = [MatIconModule,MatInputModule];
 
@@ -31,6 +35,9 @@ const MaterialComponents = [MatIconModule,MatInputModule];
     SidebarComponent,
     OrderPageComponent,
     SelectComponent,
+    TotalCostComponent,
+    OrderFormComponent,
+    DeliveryFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +45,8 @@ const MaterialComponents = [MatIconModule,MatInputModule];
     BrowserAnimationsModule,
     MaterialComponents,
     HttpClientModule,
-    AngularSvgIconModule.forRoot()
+    AngularSvgIconModule.forRoot(),
+    ReactiveFormsModule
   ],
   exports: [MaterialComponents],
   providers: [],

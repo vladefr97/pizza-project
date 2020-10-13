@@ -1,6 +1,6 @@
 @import "~src/theme/mixins";
 
-$border_color: var(--color-border);
+$border_color: var(--color-outlines);
 $accent_light: var(--color-accent-transparent);
 .counter {
   &__minus, &__value, &__plus {
@@ -9,7 +9,7 @@ $accent_light: var(--color-accent-transparent);
   }
 
   &__minus, &__plus {
-    @include box-shadow();
+    //@include box-shadow();
     display: inline-block;
     background: $accent_light;
     border-radius: 25px;
@@ -32,8 +32,11 @@ $accent_light: var(--color-accent-transparent);
 
 .order {
   border-bottom: .5px solid $border_color;
+  max-width: 700px;
+  margin: 0 auto;
 
   &__body {
+    width: 100%;
     display: grid;
     grid-template-rows: repeat(1, 1fr);
     grid-template-columns: repeat(8, 1fr);
@@ -42,6 +45,10 @@ $accent_light: var(--color-accent-transparent);
 
   &__picture {
     grid-area: pic;
+    img{
+      width: 40px;
+      height:30px;
+    }
   }
 
   &__details {
@@ -49,6 +56,7 @@ $accent_light: var(--color-accent-transparent);
   }
 
   &__delete {
+    text-align: right;
     grid-area: del;
   }
 

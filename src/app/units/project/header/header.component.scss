@@ -1,8 +1,8 @@
 $primary: var(--color-primary);
 $accent_light: var(--color-accent-light);
 $accent: var(--color-accent);
-$bg_color: var(--color-bg);
-$border_color: var(--color-bg);
+$bg_color: var(--color-minor);
+$border_color: var(--color-minor);
 .header {
   background: $primary;
   width: 100%;

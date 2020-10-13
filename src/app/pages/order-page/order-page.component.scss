@@ -1,0 +1,54 @@
+@import "~src/theme/mixins";
+
+$bg_color: var(--color-primary);
+
+.wrapper {
+  @include box-shadow();
+  @include card-borders();
+
+  max-width: 800px;
+  margin: 10px auto;
+  background: $bg_color;
+
+}
+
+.order {
+  &__info {
+
+    margin: 10px 15px;
+  }
+  &__total-cost {
+    display: inline-block;
+    float: right;
+    margin-right: 10px;
+  }
+}
+
+.more {
+  @include control-borders();
+  background: var(--color-minor);
+  padding: 5px 15px;
+  display: inline-block;
+  vertical-align: middle;
+cursor: pointer;
+  &__icon {
+
+    vertical-align: middle;
+  }
+}
+.total-cost{
+
+}
+.app-input{
+  @include control-borders();
+  background: var(--color-minor);
+  color: var(--color-font-light);
+
+  border: none;
+  padding: 10px 15px;
+  outline: none;
+  &.error{
+    border: 2px solid var(--color-accent-light);
+  }
+
+}

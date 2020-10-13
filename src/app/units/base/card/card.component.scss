@@ -1,7 +1,7 @@
 @import "~src/theme/mixins";
 
 $bg_color: var(--color-primary);
-$control_bg: var(--color-bg);
+$control_bg: var(--color-minor);
 .card {
   @include box-shadow();
   @include card-borders();
