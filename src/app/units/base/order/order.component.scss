@@ -34,6 +34,7 @@ $accent_light: var(--color-accent-transparent);
   border-bottom: .5px solid $border_color;
   max-width: 700px;
   margin: 0 auto;
+  padding: 10px 15px;
 
   &__body {
     width: 100%;
@@ -45,6 +46,7 @@ $accent_light: var(--color-accent-transparent);
 
   &__picture {
     grid-area: pic;
+    margin-right: 5px;
     img{
       width: 40px;
       height:30px;

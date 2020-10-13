@@ -2,11 +2,11 @@
 __order order">
   <div class="order__body">
     <div class="order__picture"> <picture>
-      <img src="./assets/images/pizza_1.jpeg" alt="Пицца с грибами" >
+      <img src="./assets/images/{{product.imgName}}.jpg" alt="{{product.name}}" >
     </picture></div>
     <div class="order__details">
-      <div class="order__name">{{name}}</div>
-      <div class="order__params">{{type}}, {{diameter}} см</div>
+      <div class="order__name">{{product.name}}</div>
+      <div class="order__params">Тонкое, 20 см</div>
     </div>
     <div class="order__delete"><mat-icon [inline]="true" >clear</mat-icon></div>
   </div>
@@ -21,8 +21,8 @@ __order order">
   </div>
   <!--      TODO: повторяющийся элемент-->
   <div class="order__price price">
-    <span class="price__value">690</span>
-    <span class="price__unit">Р</span>
+    <span class="price__value">{{product.dollarPrice}}</span>
+    <span class="price__unit">Д</span>
   </div>
 
 </div>

@@ -7,11 +7,11 @@ $control_bg: var(--color-minor);
   @include card-borders();
   display: inline-block;
   background: $bg_color;
-
+  width: 250px;
   margin: 10px;
   padding: 15px;
   @media (min-width: 1025px) {
-    //max-width: 250px;
+    width: 250px;
     //padding: 5px;
     //height: 450px;
     //margin: 20px;
@@ -24,8 +24,8 @@ $control_bg: var(--color-minor);
       height: 70px;
       float: left;
       @media (min-width: 1025px) {
-        height: 160px;
-        width: 200px;
+        height: 180px;
+        width: 190px;
         float: none;
       }
     }

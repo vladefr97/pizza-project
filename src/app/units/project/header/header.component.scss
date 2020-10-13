@@ -9,6 +9,7 @@ $border_color: var(--color-minor);
   height: 50px;
   border-bottom: 3px solid $bg_color;
   position: fixed;
+  top:0;
   overflow: hidden;
   @media (min-width: 1025px) {
     position: relative;

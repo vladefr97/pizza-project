@@ -1,5 +1,7 @@
-
 <div class="wrapper">
+
+
+<div class="container">
   <div class="order">
     <div class="order__header">
       <div class="order__info more">Заказ <span class="more__icon"><mat-icon>expand_more</mat-icon></span></div>
@@ -8,18 +10,19 @@
       </div>
     </div>
     <div class="order__body">
-      <app-order [name]="'Пицца традиционная'" [diameter]="30" [price]="600" [type]="'Тонкое тесто'"></app-order>
-      <app-order [name]="'Пицца ewqerwrwтрадиционная'" [diameter]="30" [price]="600"
-                 [type]="'Тонкое тесто'"></app-order>
-      <app-order [name]="'Пицца традиционная'" [diameter]="30" [price]="600" [type]="'Тонкоеrqwtrt тесто'"></app-order>
-      <app-order [name]="'Пицца традrrewиционная'" [diameter]="30" [price]="600" [type]="'Тонкое тесто'"></app-order>
-      <app-order [name]="'Пицца традrwerиционная'" [diameter]="30" [price]="600" [type]="'Тонкое тесто'"></app-order>
-      <app-order [name]="'Пицца традиционная'" [diameter]="30" [price]="600" [type]="'Тонкое тесто'"></app-order>
-      <app-order [name]="'Пицца традиционная'" [diameter]="30" [price]="600" [type]="'Тонкое тесто'"></app-order>
+      <app-order *ngFor="let product of this.orderItemsService.getAllOrderProducts()" [product]="product"></app-order>
+<!--      <app-order [name]="'Пицца традиционная'" [diameter]="30" [price]="600" [type]="'Тонкое тесто'"></app-order>-->
+<!--      <app-order [name]="'Пицца ewqerwrwтрадиционная'" [diameter]="30" [price]="600"-->
+<!--                 [type]="'Тонкое тесто'"></app-order>-->
+<!--      <app-order [name]="'Пицца традиционная'" [diameter]="30" [price]="600" [type]="'Тонкоеrqwtrt тесто'"></app-order>-->
+<!--      <app-order [name]="'Пицца традrrewиционная'" [diameter]="30" [price]="600" [type]="'Тонкое тесто'"></app-order>-->
+<!--      <app-order [name]="'Пицца традrwerиционная'" [diameter]="30" [price]="600" [type]="'Тонкое тесто'"></app-order>-->
+<!--      <app-order [name]="'Пицца традиционная'" [diameter]="30" [price]="600" [type]="'Тонкое тесто'"></app-order>-->
+<!--      <app-order [name]="'Пицца традиционная'" [diameter]="30" [price]="600" [type]="'Тонкое тесто'"></app-order>-->
     </div>
   </div>
 </div>
-<div class="wrapper">
+<div class="container">
   <div class="contact-form">
     <div class="contact-form__header"></div>
     <div class="contact-form__body">
@@ -41,24 +44,12 @@
   </div>
 </div>
 
-<div class="wrapper">
+<div class="container">
   <div class="contact-form">
     <div class="contact-form__header"></div>
     <div class="contact-form__body">
       <app-delivery-form></app-delivery-form>
-
-      <!--        <p>-->
-      <!--          <input type="text" placeholder="Ваше имя" required class="app-input">-->
-      <!--          <input type="password" placeholder="E-mail" required class="app-input ">-->
-      <!--        </p>-->
-      <!--        <p>-->
-      <!--          <input type="tel" pattern="" placeholder="Ваше имя" required class="app-input">-->
-      <!--          <input type="password" placeholder="E-mail" required class="app-input ">-->
-      <!--        </p>-->
-
-
-
-
     </div>
   </div>
+</div>
 </div>
