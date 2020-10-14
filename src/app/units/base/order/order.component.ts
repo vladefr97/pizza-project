@@ -25,4 +25,7 @@ export class OrderComponent implements OnInit {
 
   }
 
+  deleteFromOrder() {
+
+  }
 }

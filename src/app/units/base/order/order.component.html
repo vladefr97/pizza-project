@@ -8,7 +8,7 @@ __order order">
       <div class="order__name">{{product.name}}</div>
       <div class="order__params">Тонкое, 20 см</div>
     </div>
-    <div class="order__delete"><mat-icon [inline]="true" >clear</mat-icon></div>
+    <div class="order__delete" (click)="deleteFromOrder()"><mat-icon [inline]="true" >clear</mat-icon></div>
   </div>
 
   <div class="order__controls">
