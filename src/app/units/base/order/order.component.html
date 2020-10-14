@@ -2,10 +2,10 @@
 __order order">
   <div class="order__body">
     <div class="order__picture"> <picture>
-      <img src="./assets/images/{{product.imgName}}.jpg" alt="{{product.name}}" >
+      <img src="./assets/images/{{orderItem.product.imgName}}.jpg" alt="{{orderItem.product.name}}" >
     </picture></div>
     <div class="order__details">
-      <div class="order__name">{{product.name}}</div>
+      <div class="order__name">{{orderItem.product.name}}</div>
       <div class="order__params">Тонкое, 20 см</div>
     </div>
     <div class="order__delete" (click)="deleteFromOrder()"><mat-icon [inline]="true" >clear</mat-icon></div>
@@ -14,14 +14,14 @@ __order order">
   <div class="order__controls">
     <div class="order__counter counter">
       <button class="counter__minus" (click)="decreaseCount()">-</button>
-      <div class="counter__value">{{count}}</div>
+      <div class="counter__value">{{orderItem.count}}</div>
       <button class="counter__plus" (click)="increaseCount()">+</button>
     </div>
 
   </div>
   <!--      TODO: повторяющийся элемент-->
   <div class="order__price price">
-    <span class="price__value">{{product.dollarPrice}}</span>
+    <span class="price__value">{{orderItem.product.dollarPrice}}</span>
     <span class="price__unit">Д</span>
   </div>
 

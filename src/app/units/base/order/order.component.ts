@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Product} from '../../../models/product/product';
+import {OrderItemsService} from '../../../providers/order-items/order-items.service';
+import {OrderItem} from '../../../models/order-item/order-item';
 
 @Component({
   selector: 'app-order',
@@ -7,25 +9,26 @@ import {Product} from '../../../models/product/product';
   styleUrls: ['./order.component.scss']
 })
 export class OrderComponent implements OnInit {
-  @Input() product: Product;
-  private count = 1;
+  @Input() orderItem: OrderItem;
 
-  constructor() {
+
+  constructor(private orderItemsService: OrderItemsService) {
+
   }
 
   ngOnInit() {
   }
 
-  private increaseCount() {
-    this.count++;
+  increaseCount() {
+    this.orderItem.increaseOrderCount();
   }
 
-  private decreaseCount() {
-    this.count = this.count <= 1 ? 1 : --this.count;
+  decreaseCount() {
+    this.orderItem.decreaseOrderCount();
 
   }
 
   deleteFromOrder() {
-
+    this.orderItemsService.delete(this.orderItem);
   }
 }

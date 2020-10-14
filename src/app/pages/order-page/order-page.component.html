@@ -10,15 +10,7 @@
       </div>
     </div>
     <div class="order__body">
-      <app-order *ngFor="let product of this.orderItemsService.getAllOrderProducts()" [product]="product"></app-order>
-<!--      <app-order [name]="'Пицца традиционная'" [diameter]="30" [price]="600" [type]="'Тонкое тесто'"></app-order>-->
-<!--      <app-order [name]="'Пицца ewqerwrwтрадиционная'" [diameter]="30" [price]="600"-->
-<!--                 [type]="'Тонкое тесто'"></app-order>-->
-<!--      <app-order [name]="'Пицца традиционная'" [diameter]="30" [price]="600" [type]="'Тонкоеrqwtrt тесто'"></app-order>-->
-<!--      <app-order [name]="'Пицца традrrewиционная'" [diameter]="30" [price]="600" [type]="'Тонкое тесто'"></app-order>-->
-<!--      <app-order [name]="'Пицца традrwerиционная'" [diameter]="30" [price]="600" [type]="'Тонкое тесто'"></app-order>-->
-<!--      <app-order [name]="'Пицца традиционная'" [diameter]="30" [price]="600" [type]="'Тонкое тесто'"></app-order>-->
-<!--      <app-order [name]="'Пицца традиционная'" [diameter]="30" [price]="600" [type]="'Тонкое тесто'"></app-order>-->
+      <app-order *ngFor="let order of this.orderItemsService.allOrders()" [orderItem]="order"></app-order>
     </div>
   </div>
 </div>
@@ -27,20 +19,7 @@
     <div class="contact-form__header"></div>
     <div class="contact-form__body">
       <app-order-form></app-order-form>
-
-<!--        <p>-->
-<!--          <input type="text" placeholder="Ваше имя" required class="app-input">-->
-<!--          <input type="password" placeholder="E-mail" required class="app-input ">-->
-<!--        </p>-->
-<!--        <p>-->
-<!--          <input type="tel" pattern="" placeholder="Ваше имя" required class="app-input">-->
-<!--          <input type="password" placeholder="E-mail" required class="app-input ">-->
-<!--        </p>-->
-
-
-
-
-    </div>
+    <div>
   </div>
 </div>
 

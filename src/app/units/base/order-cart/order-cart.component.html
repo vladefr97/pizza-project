@@ -6,7 +6,10 @@
       <span class="cart__clear"><mat-icon [inline]="true" >cancel</mat-icon></span>
     </div>
     <div class="cart__body">
-      <app-order *ngFor="let product of this.orderItemsService.getAllOrderProducts()" [product]="product"></app-order>
+      <app-order *ngFor="let order of this.orderItemsService.allOrders()" [orderItem]="order">
+
+      </app-order>
+
 <!--      <app-order [name]="'Пицца традиционная'" [diameter]="30" [price]="600" [type]="'Тонкое тесто'"></app-order>-->
 <!--      <app-order [name]="'Пицца ewqerwrwтрадиционная'" [diameter]="30" [price]="600" [type]="'Тонкое тесто'"></app-order>-->
 <!--      <app-order [name]="'Пицца традиционная'" [diameter]="30" [price]="600" [type]="'Тонкоеrqwtrt тесто'"></app-order>-->

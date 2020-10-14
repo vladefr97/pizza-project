@@ -1,12 +1,13 @@
 import {Injectable} from '@angular/core';
 import {Product} from '../../models/product/product';
+import {OrderItem} from '../../models/order-item/order-item';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderItemsService {
   // TODO: Rename Items to product
-  private orderProducts: Product[] =[]
+  private orderItemsMap: Map<number, OrderItem> = new Map<number, OrderItem>();
   //   [
   //   {
   //     id: 1,
@@ -78,10 +79,19 @@ export class OrderItemsService {
   }
 
   public addToOrder(product: Product): void {
-    this.orderProducts.push(product);
+    if (!this.orderItemsMap.has(product.id)) {
+      console.log(new OrderItem(product).product);
+      this.orderItemsMap.set(product.id, new OrderItem(product));
+    } else {
+      this.orderItemsMap.get(product.id).increaseOrderCount();
+    }
   }
 
-  public getAllOrderProducts(): Product[] {
-    return this.orderProducts;
+  public delete(orderItem: OrderItem): void {
+    this.orderItemsMap.delete(orderItem.product.id);
+  }
+
+  public allOrders(): IterableIterator<OrderItem> {
+    return this.orderItemsMap.values();
   }
 }
