@@ -1,6 +1,6 @@
-<div class="card__control control type">
+<div class="card__control selector">
 
-  <div class="control__item "
+  <div class="selector__item "
        *ngFor="let option of this.options"
        [class.active]="option==this.selectedOption"
        (click)="setSelectedOption(option)">{{option}}</div>

@@ -1,20 +1,30 @@
 .container{
-  max-width: 1000px;
-margin: 0 auto;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-@media (min-width: 1025px) {
-  align-items: normal;
-  justify-content: normal;
+  padding-top: 55px;
+  padding-bottom: 50px;
+  @media (min-width: 1025px) {
+padding: 0;
 
+  }
+  .menu{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    @media (min-width: 1025px) {
+      align-items: normal;
+      justify-content: normal;
+
+    }
+
+    //flex-flow: row wrap;
+    //justify-content: space-between;
+  }
 }
 
-  //flex-flow: row wrap;
-  //justify-content: space-between;
-}
 
 //
 //.sidebar__container{
@@ -22,3 +32,4 @@ margin: 0 auto;
 //  width:500px;
 //  float: right;
 //}
+

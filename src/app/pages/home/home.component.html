@@ -1,34 +1,36 @@
 
-<app-header></app-header>
-<div class="wrapper">
-  <div class="container">
 
-    <!--  <button (click)="showPage()"></button>-->
-    <!--  <router-outlet></router-outlet>-->
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-        <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
+<div class="wrapper">
+
+  <div class="container">
+<div class="menu">
+  <app-card *ngFor="let product of storedItemsService.getAllItems()" [product]="product"></app-card>
+<!--  <app-card [imgName]="2" [name]="'Margarita'" [description]="'mozzarella cheese, tomatoes, fresh Basil, tomato sauce'"></app-card>-->
+<!--  <app-card [imgName]="8" [name]="'Marinara'" [description]="'Tomato sauce, garlic and Basil'"></app-card>-->
+<!--  <app-card [imgName]="1" [name]="'Pepperoni'" [description]="'Mozzarella cheese,Smoked sausage, chili pepper, Tomatoes in their own juice, Oregano, Garlic, ground black pepper'"></app-card>-->
+<!--  <app-card [imgName]="3" [name]="'Four Cheeses'" [description]="'Tomato sauce, mozzarella, Parmesan, Gorgonzola cheese, artichokes and oregano'"></app-card>-->
+<!--  <app-card [imgName]="4" [name]="'Calzone'" [description]="'Tomato sauce, mozzarella, ham, mushrooms, artichokes, anchovies and oregano'"></app-card>-->
+<!--  <app-card [imgName]="5" [name]="'Hawaiian'" [description]="'Pineapple, chicken fillet, ham, cheese , oregano, tomato paste'"></app-card>-->
+
+<!--  <app-card [imgName]="6" [name]="'Diavola'" [description]="'Tomato sauce, mozzarella, hot salami and chili pepper'"></app-card>-->
+<!--  <app-card [imgName]="7" [name]="'Neapolitano'" [description]="'Tomato sauce, mozzarella, oregano, anchovies'"></app-card>-->
+
+<!--  <app-card [imgName]="9" [name]="'Emiliana'" [description]="'Tomato sauce, mozzarella, eggplant, boiled potatoes and sausage'"></app-card>-->
+<!--  <app-card [imgName]="10" [name]="'Belarusian'" [description]="'Hunting sausages, mozzarella cheese, tomatoes, red onion, Basil, Parmesan cheese, tomato sauce'"></app-card>-->
+
+
+</div>
+      <app-sidebar>
+        <app-order-cart></app-order-cart>
+      </app-sidebar>
+
+
+
+
 
   </div>
 
-  <app-sidebar>
-    <app-order-basket></app-order-basket>
-  </app-sidebar>
+
 
 
 

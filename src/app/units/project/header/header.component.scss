@@ -1,14 +1,15 @@
 $primary: var(--color-primary);
 $accent_light: var(--color-accent-light);
 $accent: var(--color-accent);
-$bg_color: var(--color-bg);
-$border_color: var(--color-bg);
+$bg_color: var(--color-minor);
+$border_color: var(--color-minor);
 .header {
   background: $primary;
   width: 100%;
   height: 50px;
   border-bottom: 3px solid $bg_color;
   position: fixed;
+  top:0;
   overflow: hidden;
   @media (min-width: 1025px) {
     position: relative;
