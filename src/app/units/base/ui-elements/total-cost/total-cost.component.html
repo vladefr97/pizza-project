@@ -1,13 +1,13 @@
 <div class="cost">
-<div class="cost__word">Сумма: </div>
-  <div class="cost__value">1000</div>
+<div class="cost__word">Total: </div>
+  <div class="cost__value">{{this.orderItemsService.getPrice() |number:'2.2-2' }}</div>
   <div class="cost__currency control">
     <div class="selector">
-      <div class="selector__item active">
-        <mat-icon>attach_money</mat-icon>
+      <div class="selector__item" [class.active]="this.selectedCurrency===this.currencies['USD']" (click)="selectCurrency('USD')">
+        <mat-icon class="selector__icon">attach_money</mat-icon>
       </div>
-      <div class="selector__item">
-        <mat-icon>euro_symbol</mat-icon>
+      <div class="selector__item " [class.active]="this.selectedCurrency===this.currencies['EUR']" (click)="selectCurrency('EUR')">
+        <mat-icon class="selector__icon">euro_symbol</mat-icon>
       </div>
     </div>
 

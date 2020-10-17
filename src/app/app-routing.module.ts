@@ -11,7 +11,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'order', component: OrderPageComponent
+    path: 'order', component: OrderPageComponent, data: {animation: 'isRight'}
   }
 ];
 

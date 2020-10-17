@@ -6,7 +6,7 @@
     <div class="order__header">
       <div class="order__info more">Заказ <span class="more__icon"><mat-icon>expand_more</mat-icon></span></div>
       <div class="order__total-cost ">
-        <app-total-cost></app-total-cost>
+        <app-total-cost (click)="convertCurrency()"></app-total-cost>
       </div>
     </div>
     <div class="order__body">

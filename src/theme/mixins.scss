@@ -80,3 +80,31 @@
     }
   }
 }
+@mixin currency-selector {
+  @include control-borders();
+  background: var(--color-minor);;
+  margin-top: 5px;
+  text-align: center;
+  display: flex;
+  background: var(--color-primary);;
+
+  .selector__item {
+    @include control-borders();
+    flex-grow: 1;
+    padding: 5px;
+    display: inline-block;
+    border-radius: 20px;
+    color: var(--color-minor);
+
+
+    &.active {
+      background: var(--color-minor);;
+      color: black;
+    }
+
+    &:hover {
+      color: black;
+      cursor: pointer;
+    }
+  }
+}

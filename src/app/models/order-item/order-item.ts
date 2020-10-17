@@ -19,7 +19,7 @@ export class OrderItem {
     this.count = this.count > 1 ? --this.count : 1;
   }
 
-  public getDollarPrice(): number {
-    return this.product.dollarPrice * this.count;
+  public getPrice(): number {
+    return this.product.price * this.count;
   }
 }

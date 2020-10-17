@@ -34,7 +34,7 @@ $light_accent: var(--color-accent-light);
     max-height: none;
     @include card-borders();
     border-bottom: 2px solid $accent;
-    max-width: 300px;
+    width: 300px;
   }
 
   &__header {
@@ -80,8 +80,12 @@ $light_accent: var(--color-accent-light);
     cursor: pointer;
   }
 
-  button.cart__order {
+  &__order {
     @include buy-button();
+    margin: 5px;
+  }
+  &__total-cost{
+    float: right;
   }
 
 

@@ -1,24 +1,40 @@
 @import "~src/theme/mixins";
+
 .cost {
   display: inline-block;
 
   //padding: 5px 10px;
-  *{display: inline-block}
-  &__word{
-    margin-right: 5px;
-    color:var(--color-font-light);
-    border-bottom:.5px solid var(--color-minor);
+  * {
+    display: inline-block
   }
-  &__value{
-    font-size: 22px;
+
+  &__word {
     margin-right: 5px;
-    color:var(--color-font-light);
+    color: var(--color-font-light);
+    border-bottom: .5px solid var(--color-minor);
+  }
+
+  &__value {
+    font-size: 16px;
+    margin-right: 5px;
+    color: var(--color-font-light);
 
   }
-  &__currency{
-    @include selector();
+
+  &__currency {
+    @include currency-selector();
     border: .5px solid var(--color-minor);
 
   }
 
+}
+
+.selector {
+  &__item {
+   vertical-align: middle;
+  }
+
+  &__icon {
+    font-size: 20px;
+  }
 }

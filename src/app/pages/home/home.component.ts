@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {StoredItemsService} from '../../providers/stored-items/stored-items.service';
+import {ProductsService} from '../../providers/products/products.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,7 @@ import {StoredItemsService} from '../../providers/stored-items/stored-items.serv
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router, private storedItemsService: StoredItemsService) {
+  constructor(private route: ActivatedRoute, private router: Router, private productsService: ProductsService) {
   }
 
   ngOnInit() {

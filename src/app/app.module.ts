@@ -11,17 +11,18 @@ import {OrderComponent} from './units/base/order/order.component';
 import {OrderCartComponent} from './units/base/order-cart/order-cart.component';
 import {SidebarComponent} from './units/project/sidebar/sidebar.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatIconModule, MatInputModule} from '@angular/material';
-import { OrderPageComponent } from './pages/order-page/order-page.component';
-import { SelectComponent } from './units/base/ui-elements/select/select.component';
+import {MatButtonModule, MatIconModule, MatInputModule, MatFormFieldModule} from '@angular/material';
+import {OrderPageComponent} from './pages/order-page/order-page.component';
+import {SelectComponent} from './units/base/ui-elements/select/select.component';
 import {AngularSvgIconModule} from 'angular-svg-icon';
-import {HttpClientModule} from "@angular/common/http";
-import { TotalCostComponent } from './units/base/ui-elements/total-cost/total-cost.component';
-import { OrderFormComponent } from './units/project/forms/order-form/order-form.component';
+import {HttpClientModule} from '@angular/common/http';
+import {TotalCostComponent} from './units/base/ui-elements/total-cost/total-cost.component';
+import {OrderFormComponent} from './units/project/forms/order-form/order-form.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import { DeliveryFormComponent } from './units/project/forms/delivery-form/delivery-form.component';
+import {DeliveryFormComponent} from './units/project/forms/delivery-form/delivery-form.component';
+import {AuthSidebarComponent} from './units/project/auth-sidebar/auth-sidebar.component';
 
-const MaterialComponents = [MatIconModule,MatInputModule];
+const MaterialComponents = [MatIconModule, MatInputModule, MatButtonModule, MatFormFieldModule];
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ const MaterialComponents = [MatIconModule,MatInputModule];
     TotalCostComponent,
     OrderFormComponent,
     DeliveryFormComponent,
+    AuthSidebarComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ const MaterialComponents = [MatIconModule,MatInputModule];
     MaterialComponents,
     HttpClientModule,
     AngularSvgIconModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatButtonModule
   ],
   exports: [MaterialComponents],
   providers: [],

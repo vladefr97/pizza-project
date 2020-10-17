@@ -1,13 +1,18 @@
 import {Injectable} from '@angular/core';
 import {Product} from '../../models/product/product';
 import {OrderItem} from '../../models/order-item/order-item';
+import {Observable, Subject} from 'rxjs';
+import {from} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderItemsService {
+
   // TODO: Rename Items to product
   private orderItemsMap: Map<number, OrderItem> = new Map<number, OrderItem>();
+  private orderItemsPublisher$ = new Subject<OrderItem[]>();
+  private totalSum: number;
   //   [
   //   {
   //     id: 1,
@@ -76,7 +81,18 @@ export class OrderItemsService {
   // ];
 
   constructor() {
+
   }
+
+
+  public getPrice() {
+    this.totalSum = 0;
+    for (const order of this.orderItemsMap.values()) {
+      this.totalSum += order.getPrice();
+    }
+    return this.totalSum;
+  }
+
 
   public addToOrder(product: Product): void {
     if (!this.orderItemsMap.has(product.id)) {
@@ -85,13 +101,18 @@ export class OrderItemsService {
     } else {
       this.orderItemsMap.get(product.id).increaseOrderCount();
     }
+    this.orderItemsPublisher$.next(Array.from(this.orderItemsMap.values()));
+  }
+
+  public orderItemsUpdate(): Observable<OrderItem[]> {
+    return this.orderItemsPublisher$.asObservable();
   }
 
   public delete(orderItem: OrderItem): void {
     this.orderItemsMap.delete(orderItem.product.id);
   }
 
-  public allOrders(): IterableIterator<OrderItem> {
-    return this.orderItemsMap.values();
+  public allOrders(): OrderItem[] {
+    return Array.from(this.orderItemsMap.values());
   }
 }
