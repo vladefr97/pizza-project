@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Currency} from '../../../../models/currency/currency';
 import {ProductsService} from '../../../../providers/products/products.service';
-import {OrderItemsService} from '../../../../providers/order-items/order-items.service';
+import {DeliveryService} from '../../../../providers/delivery/delivery.service';
 
 @Component({
   selector: 'app-total-cost',
@@ -9,13 +9,12 @@ import {OrderItemsService} from '../../../../providers/order-items/order-items.s
   styleUrls: ['./total-cost.component.scss']
 })
 export class TotalCostComponent implements OnInit {
-
-  constructor(private productsService: ProductsService, private orderItemsService: OrderItemsService) {
-    this.selectedCurrency = this.productsService.getCurrency();
-  }
-
   selectedCurrency: Currency;
   currencies = {USD: Currency.USD, EUR: Currency.EUR};
+
+  constructor(private productsService: ProductsService, private deliveryService: DeliveryService) {
+    this.selectedCurrency = this.productsService.getCurrency();
+  }
 
   ngOnInit() {
   }

@@ -7,14 +7,23 @@
     <div class="header__menu menu">
       <div class="menu__desktop">
         <ul class="menu__list">
-          <li class="menu__item active">Главная</li>
-          <li class="menu__item">Акции</li>
-          <li class="menu__item">О нас</li>
+          <li class="menu__item active" routerLink="/">Main</li>
+          <li class="menu__item" *ngIf="this.displayService.isUserLoginDisplayed">
+            {{this.userLogin}}
+          </li>
+          <li class="menu__item" (click)="logout()" *ngIf="this.displayService.isLogoutDisplayed">Logout</li>
         </ul>
-        <div class="menu__login login">
-          <div class="login__normal"><mat-icon>sentiment_satisfied_alt</mat-icon></div>
+        <div class="menu__login login"
+             *ngIf="this.displayService.isHeaderLogoDisplayed"
+             [class.active]="this.displayService.isHeaderLogoActive"
+             (click)="toggleLogo()">
+          <div class="login__normal">
+            <mat-icon>sentiment_satisfied_alt</mat-icon>
+          </div>
 
-          <div class="login__hover"><mat-icon>sentiment_very_satisfied</mat-icon></div>
+          <div class="login__hover">
+            <mat-icon>sentiment_very_satisfied</mat-icon>
+          </div>
         </div>
       </div>
       <button class="menu__btn">
@@ -23,11 +32,10 @@
       <div class="menu__mobile">
 
         <ul class="menu__list">
-          <li class="menu__item">Главная</li>
-          <li class="menu__item">Акции</li>
-          <li class="menu__item">О нас</li>
-          <li class="menu__item">Вход</li>
-          <li class="menu__item">Корзина</li>
+          <li class="menu__item">Main</li>
+          <li class="menu__item">About Us</li>
+          <li class="menu__item">Logout</li>
+          <li class="menu__item">Order Cart</li>
         </ul>
       </div>
     </div>

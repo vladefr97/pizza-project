@@ -1,22 +1,49 @@
-<form [formGroup]="orderForm" class="contact-form">
-  <div class="contact-form__header">
-    <h3>Delivery Information</h3>
+<form [formGroup]="deliveryForm" class="delivery-form" (ngSubmit)="makeOrder()">
+  <div class="delivery-form__block">
+    <div class="delivery-form__header">
+      <h3>Contact Information</h3>
+    </div>
+    <div class="delivery-form__body">
+      <div class="delivery-form__group">
+        <mat-form-field class="delivery-form__field">
+          <input matInput formControlName="name" placeholder="Your name" class="app-input">
+        </mat-form-field>
+        <mat-form-field class="delivery-form__field">
+          <input matInput formControlName="email" placeholder="Your email" class="app-input">
+        </mat-form-field>
+      </div>
+      <div class="delivery-form__group">
+        <mat-form-field class="delivery-form__field">
+          <input matInput formControlName="telephone" placeholder="Your phone number" class="app-input">
+        </mat-form-field>
+      </div>
+    </div>
   </div>
-  <div class="contact-form__body">
-    <div class="contact-form__group">
-      <mat-form-field class="contact-form__field fill">
-        <input matInput formControlName="address" placeholder="Your address" class="app-input">
-      </mat-form-field>
+  <div class="delivery-form__block">
+    <div class="delivery-form__header">
+      <h3>Delivery Information</h3>
+    </div>
+    <div class="delivery-form__body">
+      <div class="delivery-form__group">
+        <mat-form-field class="delivery-form__field fill">
+          <input matInput formControlName="address" placeholder="Your address" class="app-input">
+        </mat-form-field>
 
-    </div>
-    <div class="contact-form__group">
-      <mat-form-field class="contact-form__field">
-        <input matInput formControlName="apartment" placeholder="Your apartment" class="app-input">
-      </mat-form-field>
-      <mat-form-field class="contact-form__field">
-        <input matInput formControlName="floor" placeholder="Your floor number" class="app-input">
-      </mat-form-field>
+      </div>
+      <div class="delivery-form__group">
+        <mat-form-field class="delivery-form__field">
+          <input matInput formControlName="apartment" placeholder="Your apartment" class="app-input">
+        </mat-form-field>
+        <mat-form-field class="delivery-form__field">
+          <input matInput formControlName="floor" placeholder="Your floor number" class="app-input">
+        </mat-form-field>
+
+        <div class="delivery-form__submit-area">
+          <button mat-raised-button color="accent" type="submit" class="delivery-form__button login">Submit</button>
+        </div>
+      </div>
     </div>
   </div>
+
 
 </form>

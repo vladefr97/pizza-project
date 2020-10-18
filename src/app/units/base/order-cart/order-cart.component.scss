@@ -29,7 +29,7 @@ $light_accent: var(--color-accent-light);
 }
 
 
-  @media (min-width: 1025px) {
+  @media (min-width: 1366px) {
     text-align: left;
     max-height: none;
     @include card-borders();
@@ -39,7 +39,7 @@ $light_accent: var(--color-accent-light);
 
   &__header {
     margin-bottom: 10px;
-    @media (min-width: 1025px) {
+    @media (min-width: 1366px) {
       border-bottom: .5px solid $border_color;
     }
   }
@@ -48,7 +48,7 @@ $light_accent: var(--color-accent-light);
     max-height: 70vh;
     overflow-y: auto;
     display: none;
-    @media (min-width: 1025px) {
+    @media (min-width: 1366px) {
       display: block;
       max-width: 350px;
       *{display: inline-block}
@@ -57,7 +57,7 @@ $light_accent: var(--color-accent-light);
 
   &__footer {
     display: none;
-    @media (min-width: 1025px) {
+    @media (min-width: 1366px) {
       display: block;
     }
   }

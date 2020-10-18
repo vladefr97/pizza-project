@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {OrderItemsService} from '../../../providers/order-items/order-items.service';
+import {DeliveryService} from '../../../providers/delivery/delivery.service';
 import {OrderItem} from '../../../models/order-item/order-item';
 import {Currency} from '../../../models/currency/currency';
 import {ProductsService} from '../../../providers/products/products.service';
@@ -12,9 +12,8 @@ import {ProductsService} from '../../../providers/products/products.service';
 export class OrderCartComponent implements OnInit {
   orders: OrderItem[];
 
-  constructor(private orderItemsService: OrderItemsService, private productsService: ProductsService) {
-    // this.orders = this.orderItemsService.allOrders();
-    this.orderItemsService.orderItemsUpdate().subscribe((orderItems) => {
+  constructor(private deliveryService: DeliveryService, private productsService: ProductsService) {
+    this.deliveryService.orderItemsUpdate().subscribe((orderItems) => {
       this.orders = orderItems;
     });
   }
@@ -24,9 +23,5 @@ export class OrderCartComponent implements OnInit {
 
   convertCurrency() {
     this.productsService.convertProductsCurrency(Currency.EUR);
-  }
-
-  deleteFromCart() {
-
   }
 }

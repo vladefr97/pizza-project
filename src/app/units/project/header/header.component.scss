@@ -9,11 +9,10 @@ $border_color: var(--color-minor);
   height: 50px;
   border-bottom: 3px solid $bg_color;
   position: fixed;
-  top:0;
+  top: 0;
   overflow: hidden;
   @media (min-width: 1025px) {
     position: relative;
-
   }
 
   &__container {
@@ -21,12 +20,10 @@ $border_color: var(--color-minor);
     @media (min-width: 600px) {
       width: 600px;
     }
-
-
   }
+
   &__logo {
     display: inline-block;
-    //position: absolute;
     padding-top: 5px;
     padding-left: 20px;
     outline: none;
@@ -34,7 +31,6 @@ $border_color: var(--color-minor);
     @media (min-width: 600px) {
       padding-top: 5px;
     }
-
   }
 }
 
@@ -42,6 +38,7 @@ $border_color: var(--color-minor);
   padding: 20px 0;
   display: inline-block;
   float: right;
+
   .menu__btn {
     width: 40px;
     height: 40px;
@@ -72,14 +69,16 @@ $border_color: var(--color-minor);
     }
   }
 
-  &__desktop{
+  &__desktop {
     display: none;
     margin-top: -15px;
     @media (min-width: 600px) {
       display: inline-block;
-
     }
-    *{display: inline-block}
+
+    * {
+      display: inline-block
+    }
 
     .menu__list {
       margin-top: 0;
@@ -88,7 +87,6 @@ $border_color: var(--color-minor);
     }
 
     .menu__item {
-
       padding: 12px 8px;
       margin-right: 4px;
       vertical-align: middle;
@@ -100,20 +98,16 @@ $border_color: var(--color-minor);
         color: $accent;
       }
     }
+
     .menu__login {
-      //background: #ffffff;
-      //font-size: 30px;
       padding: 8px 12px;
-      //color: $accent;
       float: right;
       margin-top: 4px;
-      //cursor: pointer;
-
     }
   }
+
   &__mobile {
     .menu__list {
-      //TODO: remove display:none in order to display mobile menu
       display: none;
       margin: 0;
       height: 100vh;
@@ -138,25 +132,35 @@ $border_color: var(--color-minor);
       }
     }
 
-
     @media (min-width: 1025px) {
       display: none;
-
     }
   }
 }
 
-.login{
+.login {
   cursor: pointer;
   color: $accent_light;
-  .login__hover{display: none}
-  .login__normal{display: inline-block}
-  &:hover{
+
+  .login__hover {
+    display: none
+  }
+
+  .login__normal {
+    display: inline-block
+  }
+
+  &:hover, &.active {
     background-color: $accent_light;
     color: white;
-    .login__hover{
-      display: inline-block}
-    .login__normal{display: none}
+
+    .login__hover {
+      display: inline-block
+    }
+
+    .login__normal {
+      display: none
+    }
   }
 
 }

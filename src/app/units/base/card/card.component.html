@@ -1,8 +1,7 @@
-
 <div class="card">
   <div class="card__pic">
     <picture>
-      <img src="./assets/images/{{product.imgName}}.jpg" alt="{{product.name}}" >
+      <img src="./assets/images/{{product.imgName}}.jpg" alt="{{product.name}}">
     </picture>
   </div>
 
@@ -15,8 +14,6 @@
   <div class="card__controls">
     <div class="card__control control type">
       <app-select [options]="['Традиционное','Тонкое']"></app-select>
-<!--      <div class="control__item active">Традиционное</div>-->
-<!--      <div class="control__item">Тонкое</div>-->
     </div>
     <div class="card__control control size">
       <app-select [options]="['20 см','30 см','40 см']"></app-select>
@@ -26,9 +23,7 @@
     <button class="card__buy-button buy__button" (click)="addToOrderCart()">В корзину</button>
     <div class="card__price price">
       <span class="price__value">{{product.price| currency:product.currency}}</span>
-<!--      <span class="price__unit">{{product.currency }}</span>-->
     </div>
   </div>
-
 
 </div>

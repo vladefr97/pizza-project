@@ -1,27 +1,59 @@
 @import "~src/theme/mixins";
 
 $bg_color: var(--color-primary);
-.contact-form{
-  &__header{
-    padding: 1px 15px;
-    color:var(--color-font-light);
+.delivery-form {
+  &__block {
+
+    @include box-shadow();
+    @include card-borders();
+    max-width: 90%;
+    margin: 15px auto;
+    background: var(--color-primary);
+    @media (min-width: 1025px) {
+      max-width: 800px;
+      margin: 10px auto;
+    }
+
   }
-  &__group{
+
+  &__header {
+    padding: 1px 15px;
+    color: var(--color-font-light);
+  }
+
+  &__group {
     display: block;
     margin: 0 auto;
-    width:60%;
+    width: 60%;
   }
-  &__field{
+
+  &__field {
     margin-right: 10px;
-    &.fill{
+
+    &.fill {
       width: 100%;
     }
   }
 
+  &__submit-area {
+    display: block;
+    text-align: right;
+  }
+
+  &__button {
+    margin: 10px auto;
+  }
+
 }
 
-.app-input{
+.app-input {
+  color: var(--color-font-light);
+  border: none;
+  padding: 10px 15px;
+  outline: none;
 
-color: var(--color-font-light);
+  &.error {
+    border: 2px solid var(--color-accent-light);
+  }
 
 }

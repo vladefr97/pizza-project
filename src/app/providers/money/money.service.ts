@@ -25,12 +25,8 @@ export class MoneyService {
   }
 
   private doCurrencyExchangeRateRequest(targetCurrency: Currency) {
-    console.log('send request');
     this.api.get(this.URL, this.ENDPOINT, {app_id: this.APP_ID, base: this.BASE_CURRENCY}).subscribe((response: any) => {
-      console.log('got request');
       this.currencyExchangePublisher$.next(response.rates[targetCurrency]);
     });
   }
-
-
 }

@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {OrderItemsService} from '../../providers/order-items/order-items.service';
-import {MoneyService} from '../../providers/money/money.service';
-import {Currency} from '../../models/currency/currency';
+import {DeliveryService} from '../../providers/delivery/delivery.service';
+
 
 @Component({
   selector: 'app-order-page',
@@ -10,18 +9,16 @@ import {Currency} from '../../models/currency/currency';
 })
 export class OrderPageComponent implements OnInit {
 
-  // orderItem: Product;
+  bodyIsDisplayed = true;
 
-  constructor(private orderItemsService: OrderItemsService, private money: MoneyService) {
+  constructor(public deliveryService: DeliveryService) {
   }
 
   ngOnInit() {
   }
 
-  convertCurrency() {
-    // const convertedValue = this.money.convertCurrency(200, Currency.USD, Currency.EUR).subscribe(targetAmount => {
-    //   console.log(targetAmount);
-    // });
 
+  toggleOrderBodyDisplay() {
+    this.bodyIsDisplayed = !this.bodyIsDisplayed;
   }
 }

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {OrderItemsService} from '../../../providers/order-items/order-items.service';
+import {DeliveryService} from '../../../providers/delivery/delivery.service';
 import {OrderItem} from '../../../models/order-item/order-item';
 import {Currency} from '../../../models/currency/currency';
 
@@ -12,16 +12,11 @@ export class OrderComponent implements OnInit {
   @Input() orderItem: OrderItem;
   currency: Currency;
 
-
-  constructor(private orderItemsService: OrderItemsService) {
+  constructor(private deliveryService: DeliveryService) {
     this.currency = Currency.USD;
   }
 
   ngOnInit() {
-  }
-
-  public convertCurrency() {
-    this.currency = Currency.EUR;
   }
 
   increaseCount() {
@@ -30,10 +25,9 @@ export class OrderComponent implements OnInit {
 
   decreaseCount() {
     this.orderItem.decreaseOrderCount();
-
   }
 
   deleteFromCart() {
-    this.orderItemsService.delete(this.orderItem);
+    this.deliveryService.delete(this.orderItem);
   }
 }

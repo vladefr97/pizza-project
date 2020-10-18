@@ -14,8 +14,4 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  showPage() {
-    this.router.navigate(['/order'], {relativeTo: this.route});
-  }
 }

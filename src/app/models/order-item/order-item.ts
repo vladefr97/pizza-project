@@ -5,8 +5,6 @@ export class OrderItem {
   public count: number;
 
   constructor(prod: Product) {
-    console.log(`pddr ${prod}`);
-
     this.product = prod;
     this.count = 1;
   }

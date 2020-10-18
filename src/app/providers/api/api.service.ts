@@ -10,7 +10,6 @@ export class ApiService {
   constructor(private http: HttpClient) {
   }
 
-
   public get(url: string, endpoint: string, params?: any, reqOpts?: any) {
     if (!reqOpts) {
       reqOpts = {

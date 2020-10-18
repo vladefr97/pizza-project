@@ -1,12 +1,13 @@
-.container{
+.container {
   display: flex;
   padding-top: 55px;
   padding-bottom: 50px;
   @media (min-width: 1025px) {
-padding: 0;
+    padding: 0;
 
   }
-  .menu{
+
+  .menu {
     max-width: 1000px;
     margin: 0 auto;
     display: flex;
@@ -17,19 +18,7 @@ padding: 0;
     @media (min-width: 1025px) {
       align-items: normal;
       justify-content: normal;
-
     }
-
-    //flex-flow: row wrap;
-    //justify-content: space-between;
   }
 }
-
-
-//
-//.sidebar__container{
-//  height: 100%;
-//  width:500px;
-//  float: right;
-//}
 

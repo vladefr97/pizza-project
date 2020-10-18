@@ -75,7 +75,6 @@ export class ProductsService {
     }
   }
 
-
   public getAllItems(): Product[] {
     return this.products;
   }

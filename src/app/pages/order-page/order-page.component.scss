@@ -41,7 +41,7 @@
   }
 }
 
-.more {
+.more, {
   @include control-borders();
   background: var(--color-minor);
   padding: 5px 15px;
@@ -49,27 +49,25 @@
   vertical-align: middle;
   cursor: pointer;
 
-  &__icon {
+  .icon {
 
     vertical-align: middle;
   }
 }
 
-.total-cost {
 
-}
 
-.app-input {
-  @include control-borders();
-  background: var(--color-minor);
-  color: var(--color-font-light);
-
-  border: none;
-  padding: 10px 15px;
-  outline: none;
-
-  &.error {
-    border: 2px solid var(--color-accent-light);
-  }
-
-}
+//.app-input {
+//  @include control-borders();
+//  background: var(--color-minor);
+//  color: var(--color-font-light);
+//
+//  border: none;
+//  padding: 10px 15px;
+//  outline: none;
+//
+//  &.error {
+//    border: 2px solid var(--color-accent-light);
+//  }
+//
+//}

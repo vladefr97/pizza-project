@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Product} from '../../../models/product/product';
-import {OrderItemsService} from "../../../providers/order-items/order-items.service";
+import {DeliveryService} from "../../../providers/delivery/delivery.service";
 
 @Component({
   selector: 'app-card',
@@ -8,13 +8,9 @@ import {OrderItemsService} from "../../../providers/order-items/order-items.serv
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  //  @Input() imgName: string;
-  //  @Input() name: string;
-  // description: string;
-
   @Input() product: Product;
 
-  constructor(private  orderItemsService: OrderItemsService) {
+  constructor(private  orderItemsService: DeliveryService) {
   }
 
   ngOnInit() {
