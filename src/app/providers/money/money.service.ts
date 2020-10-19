@@ -13,7 +13,7 @@ export class MoneyService {
   private APP_ID = 'e8944ecedaa240f49446023fade052dd';
   private currencyExchangePublisher$ = new Subject<number>();
   private BASE_CURRENCY = Currency.USD;
-  private currency;
+
 
 
   constructor(private api: ApiService) {

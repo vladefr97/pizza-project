@@ -28,10 +28,8 @@ export class DeliveryService {
     return this.totalSum;
   }
 
-
   public addToOrder(product: Product): void {
     if (!this.orderItemsMap.has(product.id)) {
-      console.log(new OrderItem(product).product);
       this.orderItemsMap.set(product.id, new OrderItem(product));
     } else {
       this.orderItemsMap.get(product.id).increaseOrderCount();

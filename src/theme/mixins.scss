@@ -9,6 +9,7 @@
   border-radius: 20px;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 
 @mixin card-borders() {
@@ -52,7 +53,6 @@
 }
 
 //mixing for select ui element
-
 @mixin selector {
   @include control-borders();
   background: var(--color-minor);;
@@ -80,6 +80,7 @@
     }
   }
 }
+
 @mixin currency-selector {
   @include control-borders();
   background: var(--color-minor);;

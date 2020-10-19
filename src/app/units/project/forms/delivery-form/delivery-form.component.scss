@@ -3,7 +3,6 @@
 $bg_color: var(--color-primary);
 .delivery-form {
   &__block {
-
     @include box-shadow();
     @include card-borders();
     max-width: 90%;
@@ -13,7 +12,6 @@ $bg_color: var(--color-primary);
       max-width: 800px;
       margin: 10px auto;
     }
-
   }
 
   &__header {
@@ -29,7 +27,6 @@ $bg_color: var(--color-primary);
 
   &__field {
     margin-right: 10px;
-
     &.fill {
       width: 100%;
     }
@@ -43,7 +40,6 @@ $bg_color: var(--color-primary);
   &__button {
     margin: 10px auto;
   }
-
 }
 
 .app-input {

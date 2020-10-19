@@ -9,7 +9,7 @@
     </app-order>
   </div>
   <div class="cart__footer">
-    <button class="cart__order"><a routerLink="/order">Заказать</a></button>
+    <button class="cart__order" (click)="redirectToOrderPage()">Заказать</button>
     <app-total-cost class="cart__total-cost"></app-total-cost>
   </div>
 </div>

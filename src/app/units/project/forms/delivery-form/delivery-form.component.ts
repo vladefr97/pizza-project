@@ -25,7 +25,6 @@ export class DeliveryFormComponent implements OnInit {
     this.deliveryForm.valueChanges.subscribe(console.log);
   }
 
-
   makeOrder() {
     this.deliveryService.makeOrder(this.deliveryForm.value);
   }

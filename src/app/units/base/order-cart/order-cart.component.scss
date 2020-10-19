@@ -6,7 +6,6 @@ $accent: var(--color-accent);
 $light_accent: var(--color-accent-light);
 
 .cart {
-
   @include box-shadow();
   @include scroll();
   @include top-card-borders();

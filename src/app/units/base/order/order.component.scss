@@ -9,7 +9,6 @@ $accent_light: var(--color-accent-transparent);
   }
 
   &__minus, &__plus {
-    //@include box-shadow();
     display: inline-block;
     background: $accent_light;
     border-radius: 25px;
