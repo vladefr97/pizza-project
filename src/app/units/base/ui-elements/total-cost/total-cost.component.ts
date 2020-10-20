@@ -12,7 +12,7 @@ export class TotalCostComponent implements OnInit {
   selectedCurrency: Currency;
   currencies = {USD: Currency.USD, EUR: Currency.EUR};
 
-  constructor(private productsService: ProductsService, private deliveryService: DeliveryService) {
+  constructor(private productsService: ProductsService, public deliveryService: DeliveryService) {
     this.selectedCurrency = this.productsService.getCurrency();
   }
 

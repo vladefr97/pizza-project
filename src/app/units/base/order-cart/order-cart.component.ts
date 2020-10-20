@@ -3,7 +3,7 @@ import {DeliveryService} from '../../../providers/delivery/delivery.service';
 import {OrderItem} from '../../../models/order-item/order-item';
 import {Currency} from '../../../models/currency/currency';
 import {ProductsService} from '../../../providers/products/products.service';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-order-cart',
@@ -13,7 +13,7 @@ import {Router} from "@angular/router";
 export class OrderCartComponent implements OnInit {
   orders: OrderItem[];
 
-  constructor(private deliveryService: DeliveryService, private productsService: ProductsService, private router: Router) {
+  constructor(public deliveryService: DeliveryService, public productsService: ProductsService, private router: Router) {
     this.deliveryService.orderItemsUpdate().subscribe((orderItems) => {
       this.orders = orderItems;
     });

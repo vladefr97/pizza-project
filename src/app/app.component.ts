@@ -14,7 +14,7 @@ export class AppComponent {
   title = 'pizza-project';
 
 
-  constructor(private displayService: DisplayService) {
+  constructor(public displayService: DisplayService) {
   }
 
   prepareRoute(outlet: RouterOutlet) {

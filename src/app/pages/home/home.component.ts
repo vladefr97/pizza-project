@@ -10,7 +10,7 @@ import {DisplayService} from '../../providers/display/display.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router, private productsService: ProductsService, private displayService: DisplayService) {
+  constructor(private route: ActivatedRoute, private router: Router, public productsService: ProductsService, public displayService: DisplayService) {
   }
 
   ngOnInit() {
