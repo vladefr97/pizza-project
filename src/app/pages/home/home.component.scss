@@ -19,6 +19,11 @@
       align-items: normal;
       justify-content: normal;
     }
+
+    &__loader{
+      position: fixed;
+      top: 45%;
+    }
   }
 }
 

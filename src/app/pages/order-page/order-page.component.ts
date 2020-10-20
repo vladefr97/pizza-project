@@ -17,7 +17,6 @@ export class OrderPageComponent implements OnInit {
   ngOnInit() {
   }
 
-
   toggleOrderBodyDisplay() {
     this.bodyIsDisplayed = !this.bodyIsDisplayed;
   }

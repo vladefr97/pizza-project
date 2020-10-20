@@ -58,7 +58,8 @@ export class DeliveryService {
     this.api.post(this.url, 'order', {
       serviceInformation,
       orderInformation,
-      orders: Array.from(this.orderItemsMap.values())
+      timestamp: new Date().getTime(),
+      items: Array.from(this.orderItemsMap.values())
     }).subscribe(res => console.log(res), error => console.log(error));
   }
 }

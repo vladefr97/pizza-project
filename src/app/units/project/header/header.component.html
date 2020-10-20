@@ -6,6 +6,7 @@
     <div class="header__menu menu">
       <div class="menu__desktop">
         <ul class="menu__list">
+          <li class="menu__item active" *ngIf ="this.displayService.isHistoryLinkDisplayed" routerLink="/history">History</li>
           <li class="menu__item active" routerLink="/">Main</li>
           <li class="menu__item" *ngIf="this.displayService.isUserLoginDisplayed">
             {{this.userLogin}}

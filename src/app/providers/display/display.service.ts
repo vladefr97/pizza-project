@@ -5,12 +5,22 @@ import {Injectable} from '@angular/core';
 })
 export class DisplayService {
 
+
   private _isAuthSidebarDisplayed = false;
   private _isHeaderLogoActive = false;
   private _isHeaderLogoDisplayed = true;
   private _isLogoutDisplayed = false;
   private _isUserLoginDisplayed = false;
   private _isHistoryLinkDisplayed = false;
+  private _isLoaderDisplayed = true;
+
+  get isLoaderDisplayed(): boolean {
+    return this._isLoaderDisplayed;
+  }
+
+  set isLoaderDisplayed(value: boolean) {
+    this._isLoaderDisplayed = value;
+  }
 
   set isAuthSidebarDisplayed(value: boolean) {
     this._isAuthSidebarDisplayed = value;

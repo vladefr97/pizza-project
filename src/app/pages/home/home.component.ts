@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ProductsService} from '../../providers/products/products.service';
+import {DisplayService} from '../../providers/display/display.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import {ProductsService} from '../../providers/products/products.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router, private productsService: ProductsService) {
+  constructor(private route: ActivatedRoute, private router: Router, private productsService: ProductsService, private displayService: DisplayService) {
   }
 
   ngOnInit() {
