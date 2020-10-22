@@ -9,7 +9,18 @@
           <input matInput formControlName="name" placeholder="Your name" class="app-input">
         </mat-form-field>
         <mat-form-field class="delivery-form__field">
-          <input matInput formControlName="email" placeholder="Your email" class="app-input">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email"
+                 placeholder="Ex. mail@gmail.com"/>
+          <mat-error *ngIf="
+   deliveryForm.get('email').hasError('email')
+   &&!deliveryForm.get('email').hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error
+            *ngIf="deliveryForm.get('email').hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
         </mat-form-field>
       </div>
       <div class="delivery-form__group">

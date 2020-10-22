@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="order__body" *ngIf="bodyIsDisplayed">
-      <app-order *ngFor="let order of this.historyOrder.orders" [orderItem]="order"></app-order>
+      <app-order *ngFor="let order of this.historyOrder.orderItems" [orderItem]="order"></app-order>
     </div>
   </div>
 </div>

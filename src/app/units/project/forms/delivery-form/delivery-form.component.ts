@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {DeliveryService} from '../../../../providers/delivery/delivery.service';
 
 @Component({
@@ -16,7 +16,10 @@ export class DeliveryFormComponent implements OnInit {
   ngOnInit() {
     this.deliveryForm = this.formBuilder.group({
       name: '',
-      email: '',
+      email:  [, {
+        validators: [Validators.required, Validators.email],
+        updateOn: 'change',
+      }],
       telephone: '',
       address: '',
       apartment: '',

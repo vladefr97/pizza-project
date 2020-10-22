@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../../providers/auth/auth.service';
 import {Router} from '@angular/router';
@@ -11,6 +11,8 @@ import {DisplayService} from '../../../providers/display/display.service';
 })
 export class AuthSidebarComponent implements OnInit {
   loginForm: FormGroup;
+
+
   registerForm: FormGroup;
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   loginFormControl = new FormControl('', [Validators.required]);
@@ -20,6 +22,8 @@ export class AuthSidebarComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private displayService: DisplayService) {
   }
 
+
+
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       login: ['', Validators.required],
@@ -27,8 +31,11 @@ export class AuthSidebarComponent implements OnInit {
     });
     this.registerForm = this.formBuilder.group({
       login: ['', this.loginFormControl],
+      email: [, {
+        validators: [Validators.required, Validators.email],
+        updateOn: 'change',
+      }],
       // email: ['', this.emailFormControl, {updateOn: 'change'}],
-      email: ['', this.emailFormControl, {updateOn: 'change'}],
       phone: ['', this.phoneFormControl],
       password: ['', this.passwordFromControl]
     });

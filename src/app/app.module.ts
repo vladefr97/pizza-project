@@ -1,18 +1,18 @@
 // Standard and third party imports
 import {NgModule} from '@angular/core';
-import {ReactiveFormsModule} from '@angular/forms';
+import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import {AngularSvgIconModule} from 'angular-svg-icon';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-    MatButtonModule,
-    MatIconModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatTabsModule,
-    MatProgressSpinnerModule
+  MatButtonModule,
+  MatIconModule,
+  MatInputModule,
+  MatFormFieldModule,
+  MatTabsModule,
+  MatProgressSpinnerModule
 } from '@angular/material';
 // Project imports
 import {AppComponent} from './app.component';
@@ -28,7 +28,7 @@ import {TotalCostComponent} from './units/base/ui-elements/total-cost/total-cost
 import {DeliveryFormComponent} from './units/project/forms/delivery-form/delivery-form.component';
 import {AuthSidebarComponent} from './units/project/auth-sidebar/auth-sidebar.component';
 import {HistoryComponent} from './pages/history/history.component';
-import { OrderSpoilerComponent } from './units/base/order-spoiler/order-spoiler.component';
+import {OrderSpoilerComponent} from './units/base/order-spoiler/order-spoiler.component';
 
 const MaterialComponents = [MatIconModule, MatInputModule, MatButtonModule, MatFormFieldModule];
 
@@ -49,18 +49,19 @@ const MaterialComponents = [MatIconModule, MatInputModule, MatButtonModule, MatF
     HistoryComponent,
     OrderSpoilerComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MaterialComponents,
-        HttpClientModule,
-        AngularSvgIconModule.forRoot(),
-        ReactiveFormsModule,
-        MatButtonModule,
-        MatTabsModule,
-        MatProgressSpinnerModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialComponents,
+    HttpClientModule,
+    AngularSvgIconModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatTabsModule,
+    MatProgressSpinnerModule
+  ],
   exports: [MaterialComponents],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {HistoryOrder} from '../../../models/history-order/history-order';
 
 @Component({
@@ -8,8 +8,8 @@ import {HistoryOrder} from '../../../models/history-order/history-order';
 })
 export class OrderSpoilerComponent implements OnInit {
 
-  historyOrder: HistoryOrder;
-  bodyIsDisplayed = false;
+  @Input() historyOrder: HistoryOrder;
+  bodyIsDisplayed = true;
 
   constructor() {
   }

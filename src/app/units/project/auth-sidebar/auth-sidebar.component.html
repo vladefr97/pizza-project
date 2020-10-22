@@ -34,11 +34,15 @@
             </mat-form-field>
             <mat-form-field class="auth-form__field">
               <input matInput formControlName="email" type="email"
-                     [formControl]="this.emailFormControl"
-                     placeholder="Your email" class="app-input">
+
+              placeholder="Your email" class="app-input" required>
+              <mat-error *ngIf="
+   registerForm.get('email').hasError('email')
+   &&!registerForm.get('email').hasError('required')">Please enter valide email
+              </mat-error>
             </mat-form-field>
             <mat-form-field class="auth-form__field">
-              <input matInput formControlName="phone"  placeholder="Your phone number" class="app-input">
+              <input matInput formControlName="phone" placeholder="Your phone number" class="app-input">
             </mat-form-field>
             <mat-form-field class="auth-form__field">
               <input matInput type="password" formControlName="password" placeholder="Your password" class="app-input">

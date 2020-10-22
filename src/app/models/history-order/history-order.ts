@@ -3,7 +3,7 @@ import {Currency} from '../currency/currency';
 
 export interface HistoryOrder {
   timestamp: string;
-  orders: OrderItem[];
+  orderItems: OrderItem[];
   price: number;
   currency: Currency;
 }
