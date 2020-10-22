@@ -33,7 +33,12 @@
               <input matInput formControlName="login" placeholder="Your login" class="app-input">
             </mat-form-field>
             <mat-form-field class="auth-form__field">
-              <input matInput formControlName="email" type="email" placeholder="Your email" class="app-input">
+              <input matInput formControlName="email" type="email"
+                     [formControl]="this.emailFormControl"
+                     placeholder="Your email" class="app-input">
+            </mat-form-field>
+            <mat-form-field class="auth-form__field">
+              <input matInput formControlName="phone"  placeholder="Your phone number" class="app-input">
             </mat-form-field>
             <mat-form-field class="auth-form__field">
               <input matInput type="password" formControlName="password" placeholder="Your password" class="app-input">

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../../providers/auth/auth.service';
 import {Router} from '@angular/router';
 import {DisplayService} from '../../../providers/display/display.service';
@@ -12,6 +12,10 @@ import {DisplayService} from '../../../providers/display/display.service';
 export class AuthSidebarComponent implements OnInit {
   loginForm: FormGroup;
   registerForm: FormGroup;
+  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+  loginFormControl = new FormControl('', [Validators.required]);
+  phoneFormControl = new FormControl('', Validators.pattern(/(\(?[0-9]{3}\)?-?\s?[0-9]{3}-?[0-9]{4})/));
+  passwordFromControl = new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(100)]);
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private displayService: DisplayService) {
   }
@@ -22,9 +26,11 @@ export class AuthSidebarComponent implements OnInit {
       password: ['', Validators.required]
     });
     this.registerForm = this.formBuilder.group({
-      login: ['', Validators.required],
-      email: ['', Validators.required],
-      password: ['', Validators.required]
+      login: ['', this.loginFormControl],
+      // email: ['', this.emailFormControl, {updateOn: 'change'}],
+      email: ['', this.emailFormControl, {updateOn: 'change'}],
+      phone: ['', this.phoneFormControl],
+      password: ['', this.passwordFromControl]
     });
   }
 
@@ -48,5 +54,19 @@ export class AuthSidebarComponent implements OnInit {
       this.displayService.displayAuthorizedUserFunctionality();
     });
   }
+
+  getEmailErrorMessage() {
+    return this.emailFormControl.hasError('required') ? 'You must enter a value' :
+      this.emailFormControl.hasError('email') ? 'Not a valid email' : '';
+  }
+
+  getPhoneErrorMessage() {
+    return this.phoneFormControl.hasError('required') ? 'You must enter a value' :
+      this.phoneFormControl.hasError('pattern') ? 'Format must be (xxx) xxx-xxxx' : '';
+  }
+
+  // getRequiredErrorMessage(field) {
+  //   return this.biodataForm.get(field).hasError('required') ? 'You must enter a value' : '';
+  // }
 
 }
