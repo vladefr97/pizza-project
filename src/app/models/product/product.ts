@@ -2,6 +2,7 @@ import {Currency} from '../currency/currency';
 import {Serializable} from '../../libs/serialization/serializable';
 
 export class Product extends Serializable {
+
   // tslint:disable-next-line:variable-name
   private _price: number;
   baseCurrency: Currency = Currency.USD;
@@ -15,7 +16,9 @@ export class Product extends Serializable {
   constructor() {
     super();
   }
-
+  set price(value: number) {
+    this._price = value;
+  }
   get price(): number {
     if (this.currency === this.baseCurrency) {
       return this.basePrice;

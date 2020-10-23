@@ -29,6 +29,7 @@ import {DeliveryFormComponent} from './units/project/forms/delivery-form/deliver
 import {AuthSidebarComponent} from './units/project/auth-sidebar/auth-sidebar.component';
 import {HistoryComponent} from './pages/history/history.component';
 import {OrderSpoilerComponent} from './units/base/order-spoiler/order-spoiler.component';
+import { LoginFormComponent } from './units/project/forms/login-form/login-form.component';
 
 const MaterialComponents = [MatIconModule, MatInputModule, MatButtonModule, MatFormFieldModule];
 
@@ -48,6 +49,7 @@ const MaterialComponents = [MatIconModule, MatInputModule, MatButtonModule, MatF
     AuthSidebarComponent,
     HistoryComponent,
     OrderSpoilerComponent,
+    LoginFormComponent,
   ],
   imports: [
     BrowserModule,

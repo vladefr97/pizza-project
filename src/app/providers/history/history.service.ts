@@ -12,7 +12,7 @@ import {Product} from '../../models/product/product';
 export class HistoryService {
   private url = environment.userUrl;
   private endpoint = '/orders';
-  private historyOrders: HistoryOrder[];
+  private historyOrders: HistoryOrder[] = [];
 
   public getHistoryOrder(): HistoryOrder[] {
     return this.historyOrders;
@@ -23,14 +23,24 @@ export class HistoryService {
 
   public getUserOrders(userID: number) {
     console.log(this.url + userID);
+
     this.api.get(this.url, userID + this.endpoint).subscribe((userOrders: any) => {
-      this.historyOrders = userOrders;
-  //     for (const order of userOrders) {
-  //       this.historyOrders.push({currency: undefined, orderItems: [], price: 0, timestamp: order.timestamp});
-  //       for (const orderItem of order.orderItems) {
-  //           this.historyOrders.orderItems.push({ new Product().fromJSON(orderItem.product),  orderItem.count})
-  // }
-  //     }
+      this.historyOrders = [];
+      console.log(userOrders);
+      userOrders.forEach((order, index) => {
+        this.historyOrders.push({currency: order.currencies, orderItems: [], price: order.price, timestamp: order.timestamp});
+        for (const orderItem of order.orderItems) {
+          const product = new Product();
+          product.fromJSON( orderItem.product);
+          const oitem = new OrderItem(product);
+          oitem.count = orderItem.count;
+          this.historyOrders[index].orderItems.push(oitem);
+        }
+      });
+      // for (const {index, order} of userOrders.ma) {
+      //
+      // }
+      console.log(this.historyOrders);
     });
   }
 }

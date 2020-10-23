@@ -5,5 +5,5 @@ export interface HistoryOrder {
   timestamp: string;
   orderItems: OrderItem[];
   price: number;
-  currency: Currency;
+  currency: string;
 }

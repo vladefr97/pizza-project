@@ -5,12 +5,13 @@ import {Observable, BehaviorSubject, Subject} from 'rxjs';
 import {User} from '../../models/auth/user/user';
 import {JwtResponse} from '../../models/auth/jwt-response/jwt-response';
 import {HttpClient} from '@angular/common/http';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  AUTH_SERVER = 'http://localhost:5000/user';
+  AUTH_SERVER = environment.userUrl;
   authSubject$ = new BehaviorSubject(false);
   authorizedUserInfoSubject$ = new Subject<JwtResponse>();
   jwtResponse: JwtResponse;

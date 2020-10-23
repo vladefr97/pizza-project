@@ -15,20 +15,35 @@ export class DeliveryFormComponent implements OnInit {
 
   ngOnInit() {
     this.deliveryForm = this.formBuilder.group({
-      name: '',
-      email:  [, {
+      name: [, {
+        validators: [Validators.required],
+        updateOn: 'change',
+      }],
+      email: [, {
         validators: [Validators.required, Validators.email],
         updateOn: 'change',
       }],
-      telephone: '',
-      address: '',
-      apartment: '',
+      phone: [, {
+        validators: [Validators.required, Validators.pattern(/(\(?[0-9]{3}\)?-?\s?[0-9]{3}-?[0-9]{4})/)],
+        updateOn: 'change',
+      }],
+      address: [, {
+        validators: [Validators.required],
+        updateOn: 'change',
+      }],
+      apartment: [, {
+        validators: [Validators.required],
+        updateOn: 'change',
+      }],
       floor: ''
     });
-    this.deliveryForm.valueChanges.subscribe(console.log);
   }
 
   makeOrder() {
-    this.deliveryService.makeOrder(this.deliveryForm.value);
+    if (this.deliveryForm.invalid) {
+      return;
+    } else {
+      this.deliveryService.makeOrder(this.deliveryForm.value);
+    }
   }
 }

@@ -5,16 +5,20 @@
     </div>
     <div class="delivery-form__body">
       <div class="delivery-form__group">
+
         <mat-form-field class="delivery-form__field">
           <input matInput formControlName="name" placeholder="Your name" class="app-input">
+          <mat-error *ngIf="deliveryForm.get('name').hasError('required')">
+            Name is required
+          </mat-error>
         </mat-form-field>
+
         <mat-form-field class="delivery-form__field">
           <mat-label>Email</mat-label>
           <input type="email" matInput formControlName="email"
                  placeholder="Ex. mail@gmail.com"/>
-          <mat-error *ngIf="
-   deliveryForm.get('email').hasError('email')
-   &&!deliveryForm.get('email').hasError('required')">
+          <mat-error
+            *ngIf="deliveryForm.get('email').hasError('email') &&!deliveryForm.get('email').hasError('required')">
             Please enter a valid email address
           </mat-error>
           <mat-error
@@ -22,11 +26,17 @@
             Email is <strong>required</strong>
           </mat-error>
         </mat-form-field>
+
       </div>
       <div class="delivery-form__group">
+
         <mat-form-field class="delivery-form__field">
-          <input matInput formControlName="telephone" placeholder="Your phone number" class="app-input">
+          <input matInput formControlName="phone" placeholder="Your phone number" class="app-input">
+          <mat-error *ngIf="deliveryForm.get('phone').hasError('pattern')">
+            Please enter a valid phone number
+          </mat-error>
         </mat-form-field>
+
       </div>
     </div>
   </div>
@@ -38,13 +48,22 @@
       <div class="delivery-form__group">
         <mat-form-field class="delivery-form__field fill">
           <input matInput formControlName="address" placeholder="Your address" class="app-input">
+          <mat-error
+            *ngIf="deliveryForm.get('address').hasError('required')">
+            Address is required
+          </mat-error>
         </mat-form-field>
 
       </div>
       <div class="delivery-form__group">
+
         <mat-form-field class="delivery-form__field">
           <input matInput formControlName="apartment" placeholder="Your apartment" class="app-input">
+          <mat-error *ngIf="deliveryForm.get('apartment').hasError('required')">
+            Apartment number is required
+          </mat-error>
         </mat-form-field>
+
         <mat-form-field class="delivery-form__field">
           <input matInput formControlName="floor" placeholder="Your floor number" class="app-input">
         </mat-form-field>
