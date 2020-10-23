@@ -9,7 +9,7 @@ import {AuthService} from '../../providers/auth/auth.service';
 })
 export class HistoryComponent implements OnInit {
 
-  constructor(private historyService: HistoryService, private authService: AuthService) {
+  constructor(public historyService: HistoryService, private authService: AuthService) {
     const userId = this.authService.getAuthorizedUserId();
     this.historyService.getUserOrders(userId);
   }
