@@ -8,7 +8,6 @@ import {AuthService} from '../../providers/auth/auth.service';
   styleUrls: ['./history.component.scss']
 })
 export class HistoryComponent implements OnInit {
-
   constructor(public historyService: HistoryService, private authService: AuthService) {
     const userId = this.authService.getAuthorizedUserId();
     this.historyService.getUserOrders(userId);

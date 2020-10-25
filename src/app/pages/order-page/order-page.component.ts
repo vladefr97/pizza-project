@@ -10,6 +10,7 @@ import {DeliveryService} from '../../providers/delivery/delivery.service';
 export class OrderPageComponent implements OnInit {
 
   bodyIsDisplayed = true;
+  orderDone = false;
 
   constructor(public deliveryService: DeliveryService) {
   }
@@ -19,5 +20,9 @@ export class OrderPageComponent implements OnInit {
 
   toggleOrderBodyDisplay() {
     this.bodyIsDisplayed = !this.bodyIsDisplayed;
+  }
+
+  displayDone() {
+    this.orderDone = true;
   }
 }

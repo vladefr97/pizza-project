@@ -92,6 +92,7 @@ $border_color: var(--color-minor);
       vertical-align: middle;
       cursor: pointer;
       color: $accent_light;
+      outline: none;
 
       &:hover {
         background: $primary;
@@ -126,6 +127,7 @@ $border_color: var(--color-minor);
       max-width: 150px;
       border-bottom: 1px solid $border_color;
       text-align: center;
+      outline: none;
 
       &:active {
         background: $bg_color;
@@ -163,4 +165,27 @@ $border_color: var(--color-minor);
     }
   }
 
+}
+
+.user {
+  &__icon, &__login {
+    display: inline-block;
+  }
+
+  mat-icon {
+    font-size: 20px;
+    vertical-align: middle;
+    margin-right: 3px;
+
+  }
+}
+
+.logout {
+  border-radius: 5px;
+  background-color: var(--color-accent-light);
+  color: white !important;
+  &:hover{
+    background-color: var(--color-accent-light) !important;
+    color: white !important;
+  }
 }

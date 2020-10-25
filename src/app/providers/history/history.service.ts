@@ -28,24 +28,18 @@ export class HistoryService {
       this.historyOrders = [];
       console.log(userOrders);
       userOrders.forEach((order, index) => {
-        this.historyOrders.push({currency: order.currencies, orderItems: [], price: order.price, timestamp: order.timestamp});
+        this.historyOrders.push({currency: order.currency, orderItems: [], price: order.price, timestamp: order.timestamp});
         for (const orderItem of order.orderItems) {
           const product = new Product();
+          // orderItem.product.params = orderItem.product.params;
           product.fromJSON( orderItem.product);
           const oitem = new OrderItem(product);
           oitem.count = orderItem.count;
           this.historyOrders[index].orderItems.push(oitem);
         }
       });
-      // for (const {index, order} of userOrders.ma) {
-      //
-      // }
+
       console.log(this.historyOrders);
     });
   }
 }
-
-// timestamp: string;
-// orderItems: OrderItem[];
-// price: number;
-// currency: Currency;

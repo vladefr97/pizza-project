@@ -18,6 +18,9 @@ export class SelectComponent implements OnInit {
 
   setSelectedOption(option: string) {
     this.selectedOption = option;
-    console.log(this.selectedOption);
+  }
+
+  getSelectedOption() {
+    return this.selectedOption;
   }
 }

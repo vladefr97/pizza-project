@@ -10,6 +10,7 @@ import {Currency} from '../../../models/currency/currency';
 })
 export class OrderComponent implements OnInit {
   @Input() orderItem: OrderItem;
+  @Input() withControls = true;
   currency: Currency;
 
   constructor(private deliveryService: DeliveryService) {

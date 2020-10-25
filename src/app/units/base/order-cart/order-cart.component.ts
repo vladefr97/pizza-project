@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./order-cart.component.scss']
 })
 export class OrderCartComponent implements OnInit {
-  orders: OrderItem[];
+  orders: OrderItem[] = [];
 
   constructor(public deliveryService: DeliveryService, public productsService: ProductsService, private router: Router) {
     this.deliveryService.orderItemsUpdate().subscribe((orderItems) => {

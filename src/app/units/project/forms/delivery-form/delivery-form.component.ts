@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {DeliveryService} from '../../../../providers/delivery/delivery.service';
 
@@ -8,6 +8,7 @@ import {DeliveryService} from '../../../../providers/delivery/delivery.service';
   styleUrls: ['./delivery-form.component.scss']
 })
 export class DeliveryFormComponent implements OnInit {
+  @Output() onSubmit = new EventEmitter();
   deliveryForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private deliveryService: DeliveryService) {
@@ -44,6 +45,7 @@ export class DeliveryFormComponent implements OnInit {
       return;
     } else {
       this.deliveryService.makeOrder(this.deliveryForm.value);
+      this.onSubmit.emit('Submitted');
     }
   }
 }

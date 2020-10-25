@@ -13,14 +13,14 @@
   </div>
   <div class="card__controls">
     <div class="card__control control type">
-      <app-select [options]="['Традиционное','Тонкое']"></app-select>
+      <app-select #crustSelect (click)="selectCrust()" [options]="this.crustOptions"></app-select>
     </div>
     <div class="card__control control size">
-      <app-select [options]="['20 см','30 см','40 см']"></app-select>
+      <app-select #diameterSelect (click)="selectDiameter()" [options]="this.diameterOptions"></app-select>
     </div>
   </div>
   <div class="card__buy-area">
-    <button class="card__buy-button buy__button" (click)="addToOrderCart()">В корзину</button>
+    <button class="card__buy-button buy__button" (click)="addToOrderCart()">Want it!</button>
     <div class="card__price price">
       <span class="price__value">{{product.price| currency:product.currency}}</span>
     </div>

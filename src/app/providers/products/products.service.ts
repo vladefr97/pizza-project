@@ -46,10 +46,11 @@ export class ProductsService {
   }
 
   public convertProductsCurrency(targetCurrency: Currency) {
-    this.moneyService.getCurrencyExchangeRate(targetCurrency).subscribe(exchangeRate => {
-      this.currency = targetCurrency;
+    this.moneyService.getCurrencyExchangeData(targetCurrency).subscribe(exchangeData => {
+      const rate = exchangeData.rate;
+      this.currency = exchangeData.currency;
       this.products.forEach((product) => {
-        product.setExchangedPrice(targetCurrency, exchangeRate);
+        product.setExchangedPrice(targetCurrency, rate);
       });
     }, error => console.log(error));
 

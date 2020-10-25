@@ -7,18 +7,18 @@
     </div>
     <div class="order__details">
       <div class="order__name">{{orderItem.product.name}}</div>
-      <div class="order__params">Тонкое, 20 см</div>
+      <div class="order__params">{{orderItem.product.getParamsStr()}}</div>
     </div>
-    <div class="order__delete" (click)="deleteFromCart()">
+    <div class="order__delete" *ngIf="withControls" (click)="deleteFromCart()">
       <mat-icon [inline]="true">clear</mat-icon>
     </div>
   </div>
 
   <div class="order__controls">
     <div class="order__counter counter">
-      <button class="counter__minus" (click)="decreaseCount()">-</button>
+      <button class="counter__minus" *ngIf="withControls" (click)="decreaseCount()">-</button>
       <div class="counter__value">{{orderItem.count}}</div>
-      <button class="counter__plus" (click)="increaseCount()">+</button>
+      <button class="counter__plus" *ngIf="withControls" (click)="increaseCount()">+</button>
     </div>
 
   </div>

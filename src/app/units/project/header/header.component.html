@@ -6,12 +6,20 @@
     <div class="header__menu menu">
       <div class="menu__desktop">
         <ul class="menu__list">
-          <li class="menu__item active" *ngIf ="this.displayService.isHistoryLinkDisplayed" routerLink="/history">History</li>
-          <li class="menu__item active" routerLink="/">Main</li>
-          <li class="menu__item" *ngIf="this.displayService.isUserLoginDisplayed">
-            {{this.userLogin}}
+          <li class="menu__item active" *ngIf="this.displayService.isHistoryLinkDisplayed" routerLink="/history">
+            History
           </li>
-          <li class="menu__item" (click)="logout()" *ngIf="this.displayService.isLogoutDisplayed">Logout</li>
+          <li class="menu__item active" routerLink="/">Main</li>
+          <li class="menu__item user" *ngIf="this.displayService.isUserLoginDisplayed">
+            <div class="user__icon"><mat-icon [inline]="true" >
+account_circle
+            </mat-icon></div>
+            <div class="user__login">
+              {{this.userLogin}}
+            </div>
+
+          </li>
+          <li class="menu__item logout" (click)="logout()" *ngIf="this.displayService.isLogoutDisplayed">Logout</li>
         </ul>
         <div class="menu__login login"
              *ngIf="this.displayService.isHeaderLogoDisplayed"
