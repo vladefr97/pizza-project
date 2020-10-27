@@ -15,7 +15,7 @@
             </mat-form-field>
 
             <button mat-raised-button color="accent" type="submit" class="auth-form__button login">Login</button>
-            <button mat-raised-button class="auth-form__button cancel">Cancel</button>
+            <button mat-raised-button class="auth-form__button cancel" (click)="hideAuthSidebar()">Cancel</button>
 
           </div>
         </div>
@@ -49,7 +49,7 @@
             </mat-form-field>
 
             <button mat-raised-button color="accent" type="submit" class="auth-form__button login">Sign up</button>
-            <button mat-raised-button class="auth-form__button cancel">Cancel</button>
+            <button mat-raised-button class="auth-form__button cancel" (click)="hideAuthSidebar()">Cancel</button>
 
           </div>
 

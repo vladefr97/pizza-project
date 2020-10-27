@@ -23,7 +23,6 @@ export class AuthSidebarComponent implements OnInit {
   }
 
 
-
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       login: ['', Validators.required],
@@ -76,4 +75,8 @@ export class AuthSidebarComponent implements OnInit {
   //   return this.biodataForm.get(field).hasError('required') ? 'You must enter a value' : '';
   // }
 
+  hideAuthSidebar() {
+    console.log('hide')
+    this.displayService.isAuthSidebarDisplayed = false;
+  }
 }

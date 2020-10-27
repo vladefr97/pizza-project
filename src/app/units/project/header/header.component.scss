@@ -109,7 +109,7 @@ $border_color: var(--color-minor);
 
   &__mobile {
     .menu__list {
-      display: none;
+      //display: none;
       margin: 0;
       height: 100vh;
       background: $primary;

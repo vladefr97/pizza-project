@@ -34,15 +34,16 @@ account_circle
           </div>
         </div>
       </div>
-      <button class="menu__btn">
+      <button class="menu__btn" (click)="toggleMobileMenu()">
 
       </button>
-      <div class="menu__mobile">
+      <div class="menu__mobile" *ngIf="displayService.isMobileMenuDisplayed">
         <ul class="menu__list">
-          <li class="menu__item">Main</li>
-          <li class="menu__item">About Us</li>
-          <li class="menu__item">Logout</li>
-          <li class="menu__item">Order Cart</li>
+          <li class="menu__item" (click)="redirectToMainPage()">Main</li>
+          <li class="menu__item" *ngIf="displayService.isHistoryLinkDisplayed" (click)="redirectToHistoryPage()">History</li>
+          <li class="menu__item" *ngIf="!displayService.isLogoutDisplayed" (click)="showAuthSidebar()">Authorize</li>
+          <li class="menu__item" *ngIf="displayService.isLogoutDisplayed">Logout</li>
+
         </ul>
       </div>
     </div>

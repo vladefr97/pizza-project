@@ -6,6 +6,7 @@ import {Injectable} from '@angular/core';
 export class DisplayService {
 
 
+
   private _isAuthSidebarDisplayed = false;
   private _isHeaderLogoActive = false;
   private _isHeaderLogoDisplayed = true;
@@ -13,6 +14,7 @@ export class DisplayService {
   private _isUserLoginDisplayed = false;
   private _isHistoryLinkDisplayed = false;
   private _isLoaderDisplayed = true;
+  private _isMobileMenuDisplayed = false;
 
   get isLoaderDisplayed(): boolean {
     return this._isLoaderDisplayed;
@@ -53,6 +55,13 @@ export class DisplayService {
 
   get isUserLoginDisplayed(): boolean {
     return this._isUserLoginDisplayed;
+  }
+  get isMobileMenuDisplayed(): boolean {
+    return this._isMobileMenuDisplayed;
+  }
+
+  set isMobileMenuDisplayed(value: boolean) {
+    this._isMobileMenuDisplayed = value;
   }
 
 
