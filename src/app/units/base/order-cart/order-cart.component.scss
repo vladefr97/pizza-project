@@ -78,6 +78,18 @@ $light_accent: var(--color-accent-light);
     color: $light_accent;
     cursor: pointer;
   }
+  &__next{
+    float: right;
+    background-color: var(--color-accent-light);
+    color: white;
+    padding: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    @media (min-width: 1366px) {
+      display: none;
+    }
+
+  }
 
   &__order {
     @include buy-button();

@@ -23,7 +23,7 @@ export class OrderCartComponent implements OnInit {
   }
 
   convertCurrency() {
-    this.productsService.convertProductsCurrency(Currency.EUR);
+    // this.productsService.convertProductsCurrency(Currency.EUR);
   }
 
   redirectToOrderPage() {
