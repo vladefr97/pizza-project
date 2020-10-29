@@ -1,21 +1,17 @@
 @import "~src/theme/mixins";
-
 $bg_color: var(--color-primary);
-$control_bg: var(--color-bg);
+$control_bg: var(--color-minor);
+
 .card {
-  //font-family: 'PT Sans', Serif, sans-serif !important;
   @include box-shadow();
   @include card-borders();
   display: inline-block;
   background: $bg_color;
-  max-width: 300px;
+  width: 250px;
   margin: 10px;
   padding: 15px;
   @media (min-width: 1025px) {
-    max-width: 250px;
-    //padding: 5px;
-    height: 450px;
-    margin: 20px;
+    width: 250px;
   }
 
   &__pic {
@@ -25,8 +21,8 @@ $control_bg: var(--color-bg);
       height: 70px;
       float: left;
       @media (min-width: 1025px) {
-        height: 160px;
-        width: 200px;
+        height: 180px;
+        width: 190px;
         float: none;
       }
     }
@@ -41,12 +37,6 @@ $control_bg: var(--color-bg);
   &__description {
     height: 70px;
     max-width: 250px;
-    //word-wrap: break-word;
-    //word-break: break-all;
-    ////line-break: ;
-    //overflow-wrap: break-word;
-    //white-space: nowrap;
-
     text-overflow: ellipsis;
     overflow: hidden;
     @media (min-width: 1025px) {
@@ -67,31 +57,3 @@ $control_bg: var(--color-bg);
     margin-top: 10px;
   }
 }
-//
-//.control {
-//  @include control-borders();
-//  background: $control_bg;
-//  margin-top: 5px;
-//  text-align: center;
-//  display: flex;
-//  background: $bg_color;
-//
-//  &__item {
-//    @include control-borders();
-//    flex-grow: 1;
-//    padding: 10px;
-//    display: inline-block;
-//    border-radius: 20px;
-//    color: $control_bg;
-//
-//    &.active {
-//      background: $control_bg;
-//      color: black;
-//    }
-//
-//    &:hover {
-//      color: black;
-//      cursor: pointer;
-//    }
-//  }
-//}

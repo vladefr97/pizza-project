@@ -1,0 +1,18 @@
+<div class="cart ">
+  <div class="cart__header" >
+    <span class="cart__icon"><mat-icon>shopping_cart</mat-icon></span>
+    <span class="cart__count">({{this.orders.length}})</span>
+    <span class="cart__next" routerLink="/order"><mat-icon>next_week</mat-icon></span>
+    <span class="cart__clear"></span>
+  </div>
+  <div class="cart__body">
+    <app-order *ngFor="let order of this.deliveryService.allOrders()" [orderItem]="order">
+    </app-order>
+  </div>
+  <div class="cart__footer">
+    <button class="cart__order" (click)="redirectToOrderPage()">Order</button>
+    <app-total-cost class="cart__total-cost"></app-total-cost>
+  </div>
+</div>
+
+

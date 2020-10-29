@@ -1,0 +1,2 @@
+<p >Your history of orders</p>
+<app-order-spoiler *ngFor="let historyOrder of this.historyService.getHistoryOrder()" [historyOrder]="historyOrder"></app-order-spoiler>

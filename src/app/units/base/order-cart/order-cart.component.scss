@@ -1,0 +1,104 @@
+@import "~src/theme/mixins";
+
+$cart_main_color: var(--color-primary);
+$border_color: var(--color-outlines);
+$accent: var(--color-accent);
+$light_accent: var(--color-accent-light);
+
+.cart {
+  @include box-shadow();
+  @include scroll();
+  @include top-card-borders();
+  color: var(--color-font-light);
+  background: $cart_main_color;
+  padding: 10px;
+  border-top: 2px solid $accent;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  max-height: 20px;
+@media (max-width: 1024px) {
+  &:active {
+    background: $accent;
+
+    * {
+      color: $cart_main_color;
+    }
+  }
+}
+
+
+  @media (min-width: 1366px) {
+    text-align: left;
+    max-height: none;
+    @include card-borders();
+    border-bottom: 2px solid $accent;
+    width: 300px;
+  }
+
+  &__header {
+    margin-bottom: 10px;
+    @media (min-width: 1366px) {
+      border-bottom: .5px solid $border_color;
+    }
+  }
+
+  &__body {
+    max-height: 70vh;
+    overflow-y: auto;
+    display: none;
+    @media (min-width: 1366px) {
+      display: block;
+      max-width: 350px;
+      *{display: inline-block}
+    }
+  }
+
+  &__footer {
+    display: none;
+    @media (min-width: 1366px) {
+      display: block;
+    }
+  }
+
+  &__icon {
+    color: $light_accent;
+  }
+
+  &__count {
+    color: $light_accent;
+    font-size: 18px;
+    vertical-align: middle;
+    float: left;
+  }
+
+  &__clear {
+    float: right;
+    margin-right: 10px;
+    color: $light_accent;
+    cursor: pointer;
+  }
+  &__next{
+    float: right;
+    background-color: var(--color-accent-light);
+    color: white;
+    padding: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    @media (min-width: 1366px) {
+      display: none;
+    }
+
+  }
+
+  &__order {
+    @include buy-button();
+    margin: 5px;
+  }
+  &__total-cost{
+    float: right;
+  }
+
+
+}
+

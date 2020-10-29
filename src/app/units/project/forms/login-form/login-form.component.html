@@ -1,0 +1,28 @@
+<form [formGroup]="this.loginForm" class="auth-form" (ngSubmit)="signIn()">
+  <div class="auth-form__header">
+    <h3>Log into your account</h3>
+  </div>
+  <div class="auth-form__body">
+    <div class="auth-form__group">
+      <mat-form-field class="auth-form__field">
+        <input matInput formControlName="name" placeholder="Your login" class="app-input">
+        <mat-error *ngIf="loginForm.get('name').hasError('required')">
+          Login is required
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="auth-form__field">
+        <input matInput type="password" formControlName="password" placeholder="Your password" class="app-input">
+        <mat-error *ngIf="loginForm.get('password').hasError('required')&&! loginForm.get('name').hasError('minLength')">
+          Login is required
+        </mat-error>
+        <mat-error *ngIf=" loginForm.get('password').hasError('minLength')">
+          Min length is 5 symbols
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="accent" type="submit" class="auth-form__button login">Login</button>
+<!--      <button mat-raised-button class="auth-form__button cancel">Cancel</button>-->
+
+    </div>
+  </div>
+</form>

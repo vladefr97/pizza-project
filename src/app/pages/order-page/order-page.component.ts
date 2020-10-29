@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {DeliveryService} from '../../providers/delivery/delivery.service';
+
 
 @Component({
   selector: 'app-order-page',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderPageComponent implements OnInit {
 
-  constructor() { }
+  bodyIsDisplayed = true;
+  orderDone = false;
+
+  constructor(public deliveryService: DeliveryService) {
+  }
 
   ngOnInit() {
   }
 
+  toggleOrderBodyDisplay() {
+    this.bodyIsDisplayed = !this.bodyIsDisplayed;
+  }
+
+  displayDone() {
+    this.orderDone = true;
+  }
 }

@@ -1,0 +1,62 @@
+<aside class="auth-sidebar">
+  <mat-tab-group>
+    <mat-tab label="Sign in">
+      <form [formGroup]="loginForm" class="auth-form" (ngSubmit)="signIn()">
+        <div class="auth-form__header">
+          <h3>Log into your account</h3>
+        </div>
+        <div class="auth-form__body">
+          <div class="auth-form__group">
+            <mat-form-field class="auth-form__field">
+              <input matInput formControlName="login" placeholder="Your login" class="app-input">
+            </mat-form-field>
+            <mat-form-field class="auth-form__field">
+              <input matInput type="password" formControlName="password" placeholder="Your password" class="app-input">
+            </mat-form-field>
+
+            <button mat-raised-button color="accent" type="submit" class="auth-form__button login">Login</button>
+            <button mat-raised-button class="auth-form__button cancel" (click)="hideAuthSidebar()">Cancel</button>
+
+          </div>
+        </div>
+      </form>
+    </mat-tab>
+    <mat-tab label="Sign up">
+      <form [formGroup]="registerForm" class="auth-form" (ngSubmit)="signUp()">
+        <div class="auth-form__header">
+          <h3>Create a new account</h3>
+        </div>
+        <div class="auth-form__body">
+          <div class="auth-form__group">
+
+            <mat-form-field class="auth-form__field">
+              <input matInput formControlName="login" placeholder="Your login" class="app-input">
+            </mat-form-field>
+            <mat-form-field class="auth-form__field">
+              <input matInput formControlName="email" type="email"
+
+              placeholder="Your email" class="app-input" required>
+              <mat-error *ngIf="
+   registerForm.get('email').hasError('email')
+   &&!registerForm.get('email').hasError('required')">Please enter valide email
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="auth-form__field">
+              <input matInput formControlName="phone" placeholder="Your phone number" class="app-input">
+            </mat-form-field>
+            <mat-form-field class="auth-form__field">
+              <input matInput type="password" formControlName="password" placeholder="Your password" class="app-input">
+            </mat-form-field>
+
+            <button mat-raised-button color="accent" type="submit" class="auth-form__button login">Sign up</button>
+            <button mat-raised-button class="auth-form__button cancel" (click)="hideAuthSidebar()">Cancel</button>
+
+          </div>
+
+        </div>
+
+      </form>
+    </mat-tab>
+
+  </mat-tab-group>
+</aside>

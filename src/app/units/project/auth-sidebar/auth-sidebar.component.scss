@@ -1,0 +1,47 @@
+@import "~src/theme/mixins";
+
+.auth-sidebar {
+  @include box-shadow();
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--color-accent-light);
+
+  @media (min-width: 600px) {
+    width: 350px;
+  }
+}
+
+.auth-form {
+  &__header {
+    text-align: center;
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-minor);
+  }
+
+  &__field {
+    height: 80px;
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    padding: 0;
+  }
+
+  &__button {
+    display: block;
+    width: 80%;
+    padding: 5px 15px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+}
+
+.app-input {
+  background: white;
+  padding: 15px 5px;
+  display: block;
+  color: black;
+  margin-bottom: 30px;
+}

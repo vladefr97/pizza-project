@@ -1,4 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {DeliveryService} from '../../../providers/delivery/delivery.service';
+import {OrderItem} from '../../../models/order-item/order-item';
+import {Currency} from '../../../models/currency/currency';
 
 @Component({
   selector: 'app-order',
@@ -6,26 +9,26 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./order.component.scss']
 })
 export class OrderComponent implements OnInit {
-  @Input() name: string;
-  @Input() type: string;
-  @Input() diameter: number;
-  @Input() price: number;
-  private count = 1;
+  @Input() orderItem: OrderItem;
+  @Input() withControls = true;
+  currency: Currency;
 
-
-  constructor() {
+  constructor(private deliveryService: DeliveryService) {
+    this.currency = Currency.USD;
   }
 
   ngOnInit() {
   }
 
-  private increaseCount() {
-    this.count++;
+  increaseCount() {
+    this.orderItem.increaseOrderCount();
   }
 
-  private decreaseCount() {
-    this.count = this.count <= 1 ? 1 : --this.count;
-
+  decreaseCount() {
+    this.orderItem.decreaseOrderCount();
   }
 
+  deleteFromCart() {
+    this.deliveryService.delete(this.orderItem);
+  }
 }

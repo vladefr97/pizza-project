@@ -9,21 +9,22 @@
   border-radius: 20px;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 
-@mixin card-borders(){
+@mixin card-borders() {
   border-radius: 10px;
 }
 
-@mixin top-card-borders(){
-  border-radius: 10px 10px 0 0 ;
+@mixin top-card-borders() {
+  border-radius: 10px 10px 0 0;
 }
 
-@mixin control-borders(){
+@mixin control-borders() {
   border-radius: 20px;
 }
 
-@mixin scroll(){
+@mixin scroll() {
 
   ::-webkit-scrollbar-track {
     background-color: var(--color-primary)
@@ -32,11 +33,11 @@
   ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 0px;
     border-radius: 0px;
-    background-color: var(--color-bg);
+    background-color: var(--color-minor);
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color:  var(--color-bg);
+    background-color: var(--color-minor);
   }
 
   ::-webkit-resizer {
@@ -48,5 +49,63 @@
 
   ::-webkit-scrollbar {
     width: 4px;
+  }
+}
+
+//mixing for select ui element
+@mixin selector {
+  @include control-borders();
+  background: var(--color-minor);;
+  margin-top: 5px;
+  text-align: center;
+  display: flex;
+  background: var(--color-primary);;
+
+  .selector__item {
+    @include control-borders();
+    flex-grow: 1;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 20px;
+    color: var(--color-minor);;
+
+    &.active {
+      background: var(--color-minor);;
+      color: black;
+    }
+
+    &:hover {
+      color: black;
+      cursor: pointer;
+    }
+  }
+}
+
+@mixin currency-selector {
+  @include control-borders();
+  background: var(--color-minor);;
+  margin-top: 5px;
+  text-align: center;
+  display: flex;
+  background: var(--color-primary);;
+
+  .selector__item {
+    @include control-borders();
+    flex-grow: 1;
+    padding: 5px;
+    display: inline-block;
+    border-radius: 20px;
+    color: var(--color-minor);
+
+
+    &.active {
+      background: var(--color-minor);;
+      color: black;
+    }
+
+    &:hover {
+      color: black;
+      cursor: pointer;
+    }
   }
 }

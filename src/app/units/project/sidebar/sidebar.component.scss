@@ -2,18 +2,23 @@
   position: fixed;
   width: 100%;
   bottom: 0;
+  left: 0;
 
-  @media (min-width: 1025px) {
-    position: absolute;
-    height: 100%;
-    //position: sticky;
+  //Display sticky on laptop displays
+  @media (min-width: 1366px) {
+    position: -webkit-sticky;
+    position: sticky;
+    padding-top: 20px;
+    top: 0;
+    margin-right: 50px;
+    margin-left: -100px;
     width: auto;
-    top: 110px;
-    right: 20px;
-    &__content{
-      position: -webkit-sticky;
-      position: sticky;
-      top: 20px;
-    }
+  }
+
+
+  @media (min-width: 1440px) {
+    margin-right: 10px;
+    margin-left: -300px;
+
   }
 }

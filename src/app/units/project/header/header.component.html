@@ -1,21 +1,49 @@
 <header class="header">
   <div class="header__container">
-    <div class="header__logo">
-          <svg-icon src="./assets/icons/pizza.svg" ></svg-icon>
-
+    <div class="header__logo" routerLink="/">
+      <svg-icon src="./assets/icons/pizza.svg"></svg-icon>
     </div>
     <div class="header__menu menu">
-      <button class="menu__btn">
+      <div class="menu__desktop">
+        <ul class="menu__list">
+          <li class="menu__item active" *ngIf="this.displayService.isHistoryLinkDisplayed" routerLink="/history">
+            History
+          </li>
+          <li class="menu__item active" routerLink="/">Main</li>
+          <li class="menu__item user" *ngIf="this.displayService.isUserLoginDisplayed">
+            <div class="user__icon"><mat-icon [inline]="true" >
+account_circle
+            </mat-icon></div>
+            <div class="user__login">
+              {{this.userLogin}}
+            </div>
+
+          </li>
+          <li class="menu__item logout" (click)="logout()" *ngIf="this.displayService.isLogoutDisplayed">Logout</li>
+        </ul>
+        <div class="menu__login login"
+             *ngIf="this.displayService.isHeaderLogoDisplayed"
+             [class.active]="this.displayService.isHeaderLogoActive"
+             (click)="toggleLogo()">
+          <div class="login__normal">
+            <mat-icon>sentiment_satisfied_alt</mat-icon>
+          </div>
+
+          <div class="login__hover">
+            <mat-icon>sentiment_very_satisfied</mat-icon>
+          </div>
+        </div>
+      </div>
+      <button class="menu__btn" (click)="toggleMobileMenu()">
 
       </button>
-      <div class="menu__mobile">
-
+      <div class="menu__mobile" *ngIf="displayService.isMobileMenuDisplayed">
         <ul class="menu__list">
-          <li class="menu__item">Главная</li>
-          <li class="menu__item">Акции</li>
-          <li class="menu__item">О нас</li>
-          <li class="menu__item">Вход</li>
-          <li class="menu__item">Корзина</li>
+          <li class="menu__item" (click)="redirectToMainPage()">Main</li>
+          <li class="menu__item" *ngIf="displayService.isHistoryLinkDisplayed" (click)="redirectToHistoryPage()">History</li>
+          <li class="menu__item" *ngIf="!displayService.isLogoutDisplayed" (click)="showAuthSidebar()">Authorize</li>
+          <li class="menu__item" *ngIf="displayService.isLogoutDisplayed">Logout</li>
+
         </ul>
       </div>
     </div>

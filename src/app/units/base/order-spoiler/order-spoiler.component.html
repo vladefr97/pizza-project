@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="order">
+    <div class="order__header">
+      <div class="order__info more" (click)="toggleOrderBodyDisplay()">Заказ
+        <span class="icon" *ngIf="!bodyIsDisplayed">
+        <mat-icon>expand_more</mat-icon>
+          </span>
+        <span class="icon" *ngIf="bodyIsDisplayed">
+        <mat-icon>expand_less</mat-icon>
+          </span>
+      </div>
+      <div class="order__date">{{historyOrder.timestamp |date}}</div>
+      <div class="order__total-cost ">
+        {{
+        historyOrder.price | currency:historyOrder.currency
+        }}
+      </div>
+    </div>
+    <div class="order__body" *ngIf="bodyIsDisplayed">
+      <app-order *ngFor="let order of this.historyOrder.orderItems"
+                 [orderItem]="order"
+                 [withControls]="false"
+      ></app-order>
+    </div>
+  </div>
+</div>
