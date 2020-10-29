@@ -13,12 +13,17 @@ export class HeaderComponent implements OnInit {
   userLogin: string;
 
   constructor(private router: Router, public authService: AuthService, public displayService: DisplayService) {
-    this.authService.getAuthorizedUserInfo().subscribe(res => {
-      this.userLogin = res.user.login;
-    });
+
   }
 
   ngOnInit() {
+    this.authService.getAuthorizedUserInfo().subscribe(res => {
+      this.userLogin = res.user.login;
+    });
+    if (this.authService.isLoggedIn()) {
+      this.authService.restoreAuthorizedUser();
+      this.displayService.displayAuthorizedUserFunctionality();
+    }
   }
 
   logout() {

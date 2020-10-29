@@ -23,6 +23,12 @@ export class AuthService {
     return localStorage.getItem('ACCESS_TOKEN') !== null;
   }
 
+  public restoreAuthorizedUser() {
+    this.jwtResponse = JSON.parse(localStorage.getItem('Jwt'));
+    this.authSubject$.next(true);
+    this.authorizedUserInfoSubject$.next(this.jwtResponse);
+  }
+
   public getAuthorizedUserId(): number {
     return this.jwtResponse.user.id;
   }
@@ -31,10 +37,15 @@ export class AuthService {
     return this.authorizedUserInfoSubject$.asObservable();
   }
 
+  public setUser() {
+
+  }
+
   public register(user: User): Observable<JwtResponse> {
     return this.httpClient.post<JwtResponse>(`${this.AUTH_SERVER}/register`, user).pipe(
       tap((res: JwtResponse) => {
         if (res.user) {
+          localStorage.setItem('Jwt', JSON.stringify(res));
           localStorage.setItem('ACCESS_TOKEN', res.user.access_token);
           this.jwtResponse = res;
           this.authSubject$.next(true);
@@ -48,6 +59,7 @@ export class AuthService {
     return this.httpClient.post(`${this.AUTH_SERVER}/login`, user).pipe(
       tap(async (res: JwtResponse) => {
         if (res.user) {
+          localStorage.setItem('Jwt', JSON.stringify(res));
           localStorage.setItem('ACCESS_TOKEN', res.user.access_token);
           this.jwtResponse = res;
           this.authorizedUserInfoSubject$.next(this.jwtResponse);
@@ -59,6 +71,7 @@ export class AuthService {
 
   public signOut() {
     localStorage.removeItem('ACCESS_TOKEN');
+    localStorage.removeItem('Jwt');
     this.authSubject$.next(false);
   }
 

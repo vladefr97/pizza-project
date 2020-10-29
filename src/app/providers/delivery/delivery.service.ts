@@ -104,7 +104,7 @@ export class DeliveryService {
     const orderInformation = {
       totalSum: this.totalSum,
       currency: this.productsService.getCurrency(),
-      userId: this.authService.getAuthorizedUserId()
+      userId: this.authService.isLoggedIn() ? this.authService.getAuthorizedUserId() : 0
     };
     this.api.post(this.url, 'order', {
       serviceInformation,
